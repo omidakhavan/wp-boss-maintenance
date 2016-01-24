@@ -35,8 +35,8 @@ class Avma_Settings {
                 'title' => __( 'Design Settings', 'avla-maintenance' )
             ),
             array(
-                'id' => 'design_tab',
-                'title' => __( 'Mail Settings', 'avla-maintenance' )
+                'id' => 'com_tab',
+                'title' => __( 'Contact Settings', 'avla-maintenance' )
             )
         );
         return $sections;
@@ -48,212 +48,236 @@ class Avma_Settings {
      */
     function get_settings_fields() {
         $settings_fields = array(
-            'wedevs_basics' => array(
+            'general_tab' => array(
                 array(
-                    'name'              => 'text_val',
-                    'label'             => __( 'Text Input', 'wedevs' ),
-                    'desc'              => __( 'Text input description', 'wedevs' ),
+                    'name'              => 'avma_active',
+                    'label'             => __( 'Plugin Activation', 'avla-maintenance' ),
+                    'type'              => 'radio',
+                    'options'           => array(
+                                        'Active' => 'Active',
+                                        'Deactive'  => 'Deactive'
+                )),
+                array(
+                    'name'              => 'avma_notif',
+                    'label'             => __( 'Dashboard Notifaction', 'avla-maintenance' ),
+                    'desc'              => __( 'Reminder notifaction message appear on dashboard', 'avla-maintenance' ),
+                    'type'              => 'checkbox'
+                ),
+                array(
+                    'name'              => 'avma_exclude',
+                    'label'             => __( 'Exclude', 'avla-maintenance' ),
+                    'desc'              => __( 'Exclude Page From Maintenance Mode ( Seprate With Comma )', 'avla-maintenance' ),
+                    'type'              => 'textarea'
+                ), 
+                array(
+                    'name'              => 'avma_count',
+                    'label'             => __( 'CountDown Activation', 'avla-maintenance' ),
+                    'type'              => 'radio',
+                    'options'           => array(
+                                        'Active' => 'Active',
+                                        'Deactive'  => 'Deactive'
+                                        )
+                ),
+                array(
+                    'name'              => 'avma_start_date',
+                    'label'             => __( 'Date', 'avla-maintenance' ),
+                    'desc'              => __( 'Automatically disable maintenace mode at this date(mm/dd/yyyy)', 'avla-maintenance' ),
+                    'type'              => 'date',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_count_time',
+                    'label'             => __( 'Count Timer', 'avla-maintenance' ),
+                    'desc'              => __( 'Day/Hour/Minute (seprate with comma).', 'avla-maintenance' ),
                     'type'              => 'text',
-                    'default'           => 'Title',
-                    'sanitize_callback' => 'intval'
+                    'default'           => ''
                 ),
                 array(
-                    'name'              => 'number_input',
-                    'label'             => __( 'Number Input', 'wedevs' ),
-                    'desc'              => __( 'Number field with validation callback `intval`', 'wedevs' ),
-                    'type'              => 'number',
-                    'default'           => 'Title',
-                    'sanitize_callback' => 'intval'
-                ),
-                array(
-                    'name'  => 'textarea',
-                    'label' => __( 'Textarea Input', 'wedevs' ),
-                    'desc'  => __( 'Textarea description', 'wedevs' ),
-                    'type'  => 'textarea'
-                ),
-                array(
-                    'name'  => 'checkbox',
-                    'label' => __( 'Checkbox', 'wedevs' ),
-                    'desc'  => __( 'Checkbox Label', 'wedevs' ),
-                    'type'  => 'checkbox'
-                ),
-                array(
-                    'name'    => 'radio',
-                    'label'   => __( 'Radio Button', 'wedevs' ),
-                    'desc'    => __( 'A radio button', 'wedevs' ),
-                    'type'    => 'radio',
-                    'options' => array(
-                        'yes' => 'Yes',
-                        'no'  => 'No'
-                    )
-                ),
-                array(
-                    'name'    => 'multicheck',
-                    'label'   => __( 'Multile checkbox', 'wedevs' ),
-                    'desc'    => __( 'Multi checkbox description', 'wedevs' ),
-                    'type'    => 'multicheck',
-                    'options' => array(
-                        'one'   => 'One',
-                        'two'   => 'Two',
-                        'three' => 'Three',
-                        'four'  => 'Four'
-                    )
-                ),
-                array(
-                    'name'    => 'selectbox',
-                    'label'   => __( 'A Dropdown', 'wedevs' ),
-                    'desc'    => __( 'Dropdown description', 'wedevs' ),
-                    'type'    => 'select',
-                    'default' => 'no',
-                    'options' => array(
-                        'yes' => 'Yes',
-                        'no'  => 'No'
-                    )
-                ),
-                array(
-                    'name'    => 'password',
-                    'label'   => __( 'Password', 'wedevs' ),
-                    'desc'    => __( 'Password description', 'wedevs' ),
-                    'type'    => 'password',
-                    'default' => ''
-                ),
-                array(
-                    'name'    => 'file',
-                    'label'   => __( 'File', 'wedevs' ),
-                    'desc'    => __( 'File description', 'wedevs' ),
-                    'type'    => 'file',
-                    'default' => '',
-                    'options' => array(
-                        'button_label' => 'Choose Image'
-                    )
-                )
+                    'name'              => 'avma_count_color',
+                    'label'             => __( 'CountDown Color', 'avla-maintenance' ),
+                    'desc'              => __( 'Pick CountDown Color ', 'avla-maintenance' ),
+                    'type'              => 'color',
+                    'default'           => ''
+                ), 
             ),
-            'wedevs_advanced' => array(
+            'design_tab' => array(
                 array(
-                    'name'    => 'color',
-                    'label'   => __( 'Color', 'wedevs' ),
-                    'desc'    => __( 'Color description', 'wedevs' ),
-                    'type'    => 'color',
-                    'default' => ''
+                    'name'              => 'avma_logo',
+                    'label'             => __( 'Logo', 'avla-maintenance' ),
+                    'desc'              => __( 'Choose logo for your maintenace page', 'avla-maintenance' ),
+                    'type'              => 'file',
+                    'default'           => ''
                 ),
                 array(
-                    'name'    => 'password',
-                    'label'   => __( 'Password', 'wedevs' ),
-                    'desc'    => __( 'Password description', 'wedevs' ),
-                    'type'    => 'password',
-                    'default' => ''
+                    'name'              => 'avma_title',
+                    'label'             => __( 'Message Title', 'avla-maintenance' ),
+                    'desc'              => __( 'Title of message that you want to display on your maintenace page.', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
                 ),
                 array(
-                    'name'    => 'wysiwyg',
-                    'label'   => __( 'Advanced Editor', 'wedevs' ),
-                    'desc'    => __( 'WP_Editor description', 'wedevs' ),
-                    'type'    => 'wysiwyg',
-                    'default' => ''
+                    'name'              => 'vma_title_color',
+                    'label'             => __( 'Message Title Color', 'avla-maintenance' ),
+                    'desc'              => __( 'Pick Message Color ', 'avla-maintenance' ),
+                    'type'              => 'color',
+                    'default'           => ''
                 ),
                 array(
-                    'name'    => 'multicheck',
-                    'label'   => __( 'Multile checkbox', 'wedevs' ),
-                    'desc'    => __( 'Multi checkbox description', 'wedevs' ),
-                    'type'    => 'multicheck',
-                    'default' => array('one' => 'one', 'four' => 'four'),
-                    'options' => array(
-                        'one'   => 'One',
-                        'two'   => 'Two',
-                        'three' => 'Three',
-                        'four'  => 'Four'
+                    'name'              => 'vma_title_font',
+                    'label'             => __( 'Message Title Font', 'avla-maintenance' ),
+                    'type'              => 'select',
+                    'options'           => array(
+                        'source_sans' => 'Source Sans Pro',
+                        'Raleway'     => 'Raleway',
+                        'Droid_Sans'  => 'Droid Sans',
+                        'Ubuntu'      => 'Ubuntu'
+                    )
+                ),               
+                array(
+                    'name'              => 'avma_describ',
+                    'label'             => __( 'Maintenance Message', 'avla-maintenance' ),
+                    'desc'              => __( '', 'avla-maintenance' ),
+                    'type'              => 'textarea'
+                ),
+                array(
+                    'name'              => 'avma_body_color',
+                    'label'             => __( 'Message Title Color', 'avla-maintenance' ),
+                    'desc'              => __( 'Pick Message Color ', 'avla-maintenance' ),
+                    'type'              => 'color',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_body_font',
+                    'label'             => __( 'Message Title Font', 'avla-maintenance' ),
+                    'type'              => 'select',
+                    'options'           => array(
+                        'source_sans' => 'Source Sans Pro',
+                        'Raleway'     => 'Raleway',
+                        'Droid_Sans'  => 'Droid Sans',
+                        'Ubuntu'      => 'Ubuntu'
                     )
                 ),
                 array(
-                    'name'    => 'selectbox',
-                    'label'   => __( 'A Dropdown', 'wedevs' ),
-                    'desc'    => __( 'Dropdown description', 'wedevs' ),
-                    'type'    => 'select',
-                    'options' => array(
-                        'yes' => 'Yes',
-                        'no'  => 'No'
+                    'name'              => 'avma_bg',
+                    'label'             => __( 'Background Image', 'avla-maintenance' ),
+                    'desc'              => __( 'Choose background image for maintenace page', 'avla-maintenance' ),
+                    'type'              => 'file',
+                    'default'           => ''
+                ),                   
+                array(
+                    'name'              => 'avma_bg_st',
+                    'label'             => __( 'Strech Image', 'avla-maintenance' ),
+                    'desc'              => __( 'Strech background image', 'avla-maintenance' ),
+                    'type'              => 'checkbox'
+                ),
+                array(
+                    'name'              => 'avma_effect',
+                    'label'             => __( 'Background Effect', 'avla-maintenance' ),
+                    'type'              => 'multicheck',
+                    'options'           => array(
+                        'blur'        => 'Blur',
+                        'noise'       => 'Noise'
+                    )
+                ),                
+            ),    
+            'com_tab' => array(
+                array(
+                    'name'              => 'avma_contact_active',
+                    'label'             => __( 'Contact Form Activation', 'avla-maintenance' ),
+                    'type'              => 'radio',
+                    'options'           => array(
+                                        'Active' => 'Active',
+                                        'Deactive'  => 'Deactive'
+                )),
+                array(
+                    'name'              => 'avma_contact_email',
+                    'label'             => __( 'Admin E-mail', 'avla-maintenance' ),
+                    'desc'              => __( 'Users message will be sent to this address.', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_newsle_active',
+                    'label'             => __( 'NewsLetter Activation', 'avla-maintenance' ),
+                    'type'              => 'radio',
+                    'options'           => array(
+                        'active'      => 'Active',
+                        'deactive'    => 'Deactive'
+                )),
+                array(
+                    'name'              => 'avma_news_select',
+                    'label'             => __( 'Feed Burnuer', 'avla-maintenance' ),
+                    'desc'              => __( 'Select Mailing System.', 'avla-maintenance' ),
+                    'type'              => 'select',
+                    'options'           => array(
+                        'avma'        => 'Averta Subscriber',
+                        'Feed'        => 'FeedBurner'
                     )
                 ),
                 array(
-                    'name'    => 'password',
-                    'label'   => __( 'Password', 'wedevs' ),
-                    'desc'    => __( 'Password description', 'wedevs' ),
-                    'type'    => 'password',
-                    'default' => ''
-                ),
-                array(
-                    'name'    => 'file',
-                    'label'   => __( 'File', 'wedevs' ),
-                    'desc'    => __( 'File description', 'wedevs' ),
-                    'type'    => 'file',
-                    'default' => ''
-                )
-            ),
-            'wedevs_others' => array(
-                array(
-                    'name'    => 'text',
-                    'label'   => __( 'Text Input', 'wedevs' ),
-                    'desc'    => __( 'Text input description', 'wedevs' ),
-                    'type'    => 'text',
-                    'default' => 'Title'
-                ),
-                array(
-                    'name'  => 'textarea',
-                    'label' => __( 'Textarea Input', 'wedevs' ),
-                    'desc'  => __( 'Textarea description', 'wedevs' ),
-                    'type'  => 'textarea'
-                ),
-                array(
-                    'name'  => 'checkbox',
-                    'label' => __( 'Checkbox', 'wedevs' ),
-                    'desc'  => __( 'Checkbox Label', 'wedevs' ),
-                    'type'  => 'checkbox'
-                ),
-                array(
-                    'name'    => 'radio',
-                    'label'   => __( 'Radio Button', 'wedevs' ),
-                    'desc'    => __( 'A radio button', 'wedevs' ),
-                    'type'    => 'radio',
-                    'options' => array(
-                        'yes' => 'Yes',
-                        'no'  => 'No'
+                    'name'               => 'avma_social',
+                    'label'              => __( 'Social Networks', 'avla-maintenance' ),
+                    'desc'               => __( 'Show your social networks link.', 'avla-maintenance' ),
+                    'type'               => 'radio',
+                    'options'            => array(
+                        'active'       => 'Active',
+                        'Deactive'     => 'Deactive'
                     )
                 ),
                 array(
-                    'name'    => 'multicheck',
-                    'label'   => __( 'Multile checkbox', 'wedevs' ),
-                    'desc'    => __( 'Multi checkbox description', 'wedevs' ),
-                    'type'    => 'multicheck',
-                    'options' => array(
-                        'one'   => 'One',
-                        'two'   => 'Two',
-                        'three' => 'Three',
-                        'four'  => 'Four'
-                    )
+                    'name'              => 'avma_social_fa',
+                    'label'             => __( 'Facebook', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
                 ),
                 array(
-                    'name'    => 'selectbox',
-                    'label'   => __( 'A Dropdown', 'wedevs' ),
-                    'desc'    => __( 'Dropdown description', 'wedevs' ),
-                    'type'    => 'select',
-                    'options' => array(
-                        'yes' => 'Yes',
-                        'no'  => 'No'
-                    )
+                    'name'              => 'avma_social_tw',
+                    'label'             => __( 'Twitter', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
                 ),
                 array(
-                    'name'    => 'password',
-                    'label'   => __( 'Password', 'wedevs' ),
-                    'desc'    => __( 'Password description', 'wedevs' ),
-                    'type'    => 'password',
-                    'default' => ''
+                    'name'              => 'avma_social_in',
+                    'label'             => __( 'Instagram', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
                 ),
                 array(
-                    'name'    => 'file',
-                    'label'   => __( 'File', 'wedevs' ),
-                    'desc'    => __( 'File description', 'wedevs' ),
-                    'type'    => 'file',
-                    'default' => ''
-                )
+                    'name'              => 'avma_social_yo',
+                    'label'             => __( 'You Tube', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_social_g',
+                    'label'             => __( 'Google +', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_social_pi',
+                    'label'             => __( 'Pinterest', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_social_li',
+                    'label'             => __( 'Linked In', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_social_dr',
+                    'label'             => __( 'Dribbble', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_social_gi',
+                    'label'             => __( 'Github', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
             )
         );
         return $settings_fields;

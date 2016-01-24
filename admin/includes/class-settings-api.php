@@ -29,6 +29,8 @@ class Avma_Settings_Api {
      * Enqueue scripts and styles
      */
     function admin_enqueue_scripts() {
+        wp_enqueue_script('field-date-js', 'Field_Date.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker'),time(),true);
+        wp_enqueue_style( 'jquery-ui-datepicker' );  
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_media();
         wp_enqueue_script( 'wp-color-picker' );
@@ -279,7 +281,7 @@ class Avma_Settings_Api {
         $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
         $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
         $id    = $args['section']  . '[' . $args['id'] . ']';
-        $label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose File' );
+        $label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose Best Image' );
         $html  = sprintf( '<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
         $html  .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
         $html  .= $this->get_field_description( $args );
@@ -309,6 +311,19 @@ class Avma_Settings_Api {
         $html  .= $this->get_field_description( $args );
         echo $html;
     }
+    /**
+     * [callback_date description]
+     * @param  [type] $args [description]
+     * @return [type]       [description]
+     */
+function callback_date($args){
+     extract( $args );
+        $value = esc_textarea( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+        $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
+        $html  = sprintf( '<input type="date" id="datepicker" name="example[datepicker]" value="" class="example-datepicker" />', $size, $args['section'], $args['id'], $value );
+        $html  .= $this->get_field_description( $args );
+        echo $html;
+}
     /**
      * Sanitize callback for Settings API
      */
@@ -410,6 +425,9 @@ class Avma_Settings_Api {
         ?>
         <script>
             jQuery(document).ready(function($) {
+                jQuery(document).ready(function(){
+                $('.example-datepicker').datepicker(); 
+                });
                 //Initiate Color Picker
                 $('.wp-color-picker-field').wpColorPicker();
                 // Switches option sections
