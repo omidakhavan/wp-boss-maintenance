@@ -68,7 +68,7 @@ class Avma_Maintenance {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'plugin-name';
+		$this->plugin_name = 'averta-maintenance';
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
@@ -124,8 +124,17 @@ class Avma_Maintenance {
 		 * Call To Option Page Panel
 		 */
 		require_once AVMA_DIR .'admin/includes/class-avma-maintenance-setting.php';
-		new Avma_Settings ;
-
+		new Avma_Settings ;		
+		/**
+		 * Load Functions
+		 */
+		require_once AVMA_DIR .'admin/includes/avma-maintenance-functions.php';
+		
+		/**
+		 * Load Exclude Costum Template In Specific Page
+		 */
+		require_once AVMA_DIR .'admin/includes/avma-maintenance-temp.php';
+		add_action( 'plugins_loaded', array( 'Avma_Maintenance_Temp', 'get_instance' ) );
 
 	}
 

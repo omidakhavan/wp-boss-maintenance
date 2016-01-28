@@ -47,16 +47,16 @@ class Avma_Settings {
      * @return array settings fields
      */
     function get_settings_fields() {
+
         $settings_fields = array(
             'general_tab' => array(
                 array(
                     'name'              => 'avma_active',
                     'label'             => __( 'Plugin Activation', 'avla-maintenance' ),
-                    'type'              => 'radio',
-                    'options'           => array(
-                                        'Active' => 'Active',
-                                        'Deactive'  => 'Deactive'
-                )),
+                    'default'           => 'on',
+                    'desc'              => __( 'Active / Deactive', 'avla-maintenance' ),
+                    'type'              => 'checkbox'
+                ),
                 array(
                     'name'              => 'avma_notif',
                     'label'             => __( 'Dashboard Notifaction', 'avla-maintenance' ),
