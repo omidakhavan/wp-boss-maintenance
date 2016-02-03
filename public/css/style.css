@@ -34,9 +34,9 @@ ul#countdown  p.timeRefDays, ul#countdown  p.timeRefHours, ul#countdown  p.timeR
 
 body{
 	text-align: center;
-	background: #00ECB9;
-  font-family: sans-serif;
-  font-weight: 100;
+	background-color: #00ECB9;
+  	font-family: sans-serif;
+  	font-weight: 100;
 }
 
 h1{

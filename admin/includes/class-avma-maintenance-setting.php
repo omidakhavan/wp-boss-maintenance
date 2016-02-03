@@ -111,7 +111,14 @@ class Avma_Settings {
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_title',
+                    'name'              => 'avma_page_title',
+                    'label'             => __( 'Page Title', 'avla-maintenance' ),
+                    'desc'              => __( 'Title of page Notice : if empty will be show your defualt blog info.', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_content_title',
                     'label'             => __( 'Message Title', 'avla-maintenance' ),
                     'desc'              => __( 'Title of message that you want to display on your maintenace page.', 'avla-maintenance' ),
                     'type'              => 'text',
@@ -139,7 +146,7 @@ class Avma_Settings {
                     'name'              => 'avma_describ',
                     'label'             => __( 'Maintenance Message', 'avla-maintenance' ),
                     'desc'              => __( '', 'avla-maintenance' ),
-                    'type'              => 'textarea'
+                    'type'              => 'wysiwyg'
                 ),
                 array(
                     'name'              => 'avma_body_color',

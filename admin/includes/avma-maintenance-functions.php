@@ -91,6 +91,61 @@ if ( !function_exists( 'avma_count_down' ) ) {
 	}
 }
 
+/**
+ * Background Image 
+ */
+add_action( 'admin_footer', 'avma_bg' );
+if ( !function_exists( 'avma_bg' ) ) {
+	function avma_bg () {
+		$avma_bg = avma_get_option ( 'avma_bg' , 'design_tab' );
+		if ( !empty( $avma_bg ) ) {
+		echo $avma_bg ;			
+		}
+	}
+}
+
+/**
+ * Page Title 
+ */
+add_action( 'admin_footer', 'avma_page_title' );
+if ( !function_exists( 'avma_page_title' ) ) {
+	function avma_page_title () {
+		$avma_page_title = avma_get_option ( 'avma_page_title' , 'design_tab' );
+		if ( !empty( $avma_page_title ) ) {
+		 $avma_page_title ;	
+		 }else{
+		 $avma_page_title = get_bloginfo();
+		 }		
+	}
+}
+
+/**
+ * Template Header Title 
+ */
+add_action( 'admin_footer', 'avma_content_title' );
+if ( !function_exists( 'avma_content_title' ) ) {
+	function avma_content_title () {
+		$avma_content_title = avma_get_option ( 'avma_content_title' , 'design_tab' );
+		if ( !empty( $avma_content_title ) ) {
+		 _e( $avma_content_title, 'averta-maintenance' ) ;	
+		 }else{
+		 $avma_content_title = _e( 'Coming Soon...', 'averta-maintenance' );
+		 }		
+	}
+}
+
+add_action( 'admin_footer', 'avma_describ' );
+if ( !function_exists( 'avma_describ' ) ) {
+	function avma_describ () {
+		$avma_describ = avma_get_option ( 'avma_describ' , 'design_tab' );
+		if ( !empty( $avma_describ ) ) {
+		 _e( $avma_describ, 'averta-maintenance' ) ;	
+		 }else{
+		 return ;
+		 }		
+	}
+}
+
 
 
 

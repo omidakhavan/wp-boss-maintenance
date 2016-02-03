@@ -41,8 +41,13 @@ function avma_js_script(){
       })( jQuery );
    </script>  
 </head>
-
-<body>
+<title><?php avma_page_title() ?></title>
+<body> <h1><?php avma_content_title() ?></h1>
+ <style>
+body{
+  background-image: url(<?php AVMA_URL . avma_bg() ; ?>);
+}
+ </style>
 <?php  
 $avma_count_active = avma_get_option ( 'avma_count', 'general_tab' );
 if ( $avma_count_active == 'Active' ) : ?>
@@ -65,6 +70,7 @@ if ( $avma_count_active == 'Active' ) : ?>
     </li>
   </ul>
 <?php endif ; ?>
+    <article> <?php avma_describ() ?></article>
     <?php wp_footer(); ?> 
 </body>
 </html>
