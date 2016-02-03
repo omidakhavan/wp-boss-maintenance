@@ -1,9 +1,11 @@
 <?php
 /**
- * WordPress settings API demo class
+ * @link              http://averta.net
+ * @since             1.0.0
+ * @package           averta-maintenance
  *
- * @author Tareq Hasan
- */
+ * */
+
 require_once AVMA_DIR . 'admin/includes/class-settings-api.php' ; 
 if ( !class_exists('Avma_Settings' ) ):
 class Avma_Settings {
@@ -64,6 +66,13 @@ class Avma_Settings {
                     'type'              => 'checkbox'
                 ),
                 array(
+                    'name'              => 'avma_redirect',
+                    'label'             => __( 'Redirect To :', 'avla-maintenance' ),
+                    'desc'              => __( 'Redirect to costum page (for example http://example.com).', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
                     'name'              => 'avma_exclude',
                     'label'             => __( 'Exclude', 'avla-maintenance' ),
                     'desc'              => __( 'Exclude Page From Maintenance Mode ( Seprate With Comma )', 'avla-maintenance' ),
@@ -81,15 +90,8 @@ class Avma_Settings {
                 array(
                     'name'              => 'avma_start_date',
                     'label'             => __( 'Date', 'avla-maintenance' ),
-                    'desc'              => __( 'Automatically disable maintenace mode at this date(mm/dd/yyyy)', 'avla-maintenance' ),
-                    'type'              => 'date',
-                    'default'           => ''
-                ),
-                array(
-                    'name'              => 'avma_count_time',
-                    'label'             => __( 'Count Timer', 'avla-maintenance' ),
-                    'desc'              => __( 'Day/Hour/Minute (seprate with comma).', 'avla-maintenance' ),
-                    'type'              => 'text',
+                    'desc'              => __( 'Automatically disable maintenace mode at this date(mm/dd/yyyy 00:00:00)', 'avla-maintenance' ),
+                    'type'              => 'datetime',
                     'default'           => ''
                 ),
                 array(

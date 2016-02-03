@@ -1,13 +1,11 @@
 <?php
 /**
- * weDevs Settings API wrapper class
+ * @link              http://averta.net
+ * @since             1.0.0
+ * @package           averta-maintenance
  *
- * @version 1.2 (18-Oct-2015)
- *
- * @author Tareq Hasan <tareq@weDevs.com>
- * @link http://tareq.weDevs.com Tareq's Planet
- * @example src/settings-api.php How to use the class
- */
+ * */
+
 if ( !class_exists( 'Avma_Settings_Api' ) ):
 class Avma_Settings_Api {
     /**
@@ -29,12 +27,15 @@ class Avma_Settings_Api {
      * Enqueue scripts and styles
      */
     function admin_enqueue_scripts() {
-        wp_enqueue_script('field-date-js', 'Field_Date.js', array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker'),time(),true);
-        wp_enqueue_style( 'jquery-ui-datepicker' );  
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_media();
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_script( 'jquery' );
+        wp_register_style('avma_js_time_style' , AVMA_URL. '/admin/css/jquery-ui-timepicker-addon.css');
+        wp_enqueue_style( 'avma_js_time_style' );   
+        wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
+        wp_enqueue_script( 'jquery-script', 'http://code.jquery.com/ui/1.10.4/jquery-ui.js');
+        wp_enqueue_script( 'jquery-time-picker' ,  AVMA_URL. '/admin/js/jquery-ui-timepicker-addon.js',  array('jquery' ));    
     }
     /**
      * Set settings sections
@@ -311,16 +312,15 @@ class Avma_Settings_Api {
         $html  .= $this->get_field_description( $args );
         echo $html;
     }
-    /**
-     * [callback_date description]
-     * @param  [type] $args [description]
-     * @return [type]       [description]
-     */
-function callback_date($args){
+/**
+ * [callback_datetime description]
+ * @param  [type] $args [description]
+ * @return [type]       [description]
+ */
+function callback_datetime($args){
      extract( $args );
-        $value = esc_textarea( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-        $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
-        $html  = sprintf( '<input type="date" id="datepicker" name="example[datepicker]" value="" class="example-datepicker" />', $size, $args['section'], $args['id'], $value );
+        $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+        $html  = sprintf( '<input type="datetime" id="datetimepicker" name="%1$s[%2$s]" value="%3$s" class="datetimepicker" />', $args['section'], $args['id'], $value );
         $html  .= $this->get_field_description( $args );
         echo $html;
 }
@@ -426,7 +426,7 @@ function callback_date($args){
         <script>
             jQuery(document).ready(function($) {
                 jQuery(document).ready(function(){
-                $('.example-datepicker').datepicker(); 
+                $('.datetimepicker').datetimepicker(); 
                 });
                 //Initiate Color Picker
                 $('.wp-color-picker-field').wpColorPicker();
