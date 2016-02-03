@@ -69,7 +69,7 @@ class Avma_Settings {
                     'name'              => 'avma_redirect',
                     'label'             => __( 'Redirect To :', 'avla-maintenance' ),
                     'desc'              => __( 'Redirect to costum page (for example http://example.com).', 'avla-maintenance' ),
-                    'type'              => 'text',
+                    'type'              => 'url',
                     'default'           => ''
                 ),
                 array(
@@ -130,18 +130,7 @@ class Avma_Settings {
                     'desc'              => __( 'Pick Message Color ', 'avla-maintenance' ),
                     'type'              => 'color',
                     'default'           => ''
-                ),
-                array(
-                    'name'              => 'vma_title_font',
-                    'label'             => __( 'Message Title Font', 'avla-maintenance' ),
-                    'type'              => 'select',
-                    'options'           => array(
-                        'source_sans' => 'Source Sans Pro',
-                        'Raleway'     => 'Raleway',
-                        'Droid_Sans'  => 'Droid Sans',
-                        'Ubuntu'      => 'Ubuntu'
-                    )
-                ),               
+                ),             
                 array(
                     'name'              => 'avma_describ',
                     'label'             => __( 'Maintenance Message', 'avla-maintenance' ),
@@ -156,38 +145,18 @@ class Avma_Settings {
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_body_font',
-                    'label'             => __( 'Message Title Font', 'avla-maintenance' ),
-                    'type'              => 'select',
-                    'options'           => array(
-                        'source_sans' => 'Source Sans Pro',
-                        'Raleway'     => 'Raleway',
-                        'Droid_Sans'  => 'Droid Sans',
-                        'Ubuntu'      => 'Ubuntu'
-                    )
-                ),
-                array(
                     'name'              => 'avma_bg',
                     'label'             => __( 'Background Image', 'avla-maintenance' ),
                     'desc'              => __( 'Choose background image for maintenace page', 'avla-maintenance' ),
                     'type'              => 'file',
                     'default'           => ''
-                ),                   
-                array(
-                    'name'              => 'avma_bg_st',
-                    'label'             => __( 'Strech Image', 'avla-maintenance' ),
-                    'desc'              => __( 'Strech background image', 'avla-maintenance' ),
-                    'type'              => 'checkbox'
                 ),
                 array(
-                    'name'              => 'avma_effect',
-                    'label'             => __( 'Background Effect', 'avla-maintenance' ),
-                    'type'              => 'multicheck',
-                    'options'           => array(
-                        'blur'        => 'Blur',
-                        'noise'       => 'Noise'
-                    )
-                ),                
+                    'name'              => 'avma_style',
+                    'label'             => __( 'Costum Style', 'avla-maintenance' ),
+                    'desc'              => __( 'Edit template style', 'avla-maintenance' ),
+                    'type'              => 'textarea'
+                ),                                                   
             ),    
             'com_tab' => array(
                 array(

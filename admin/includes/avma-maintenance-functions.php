@@ -94,12 +94,12 @@ if ( !function_exists( 'avma_count_down' ) ) {
 /**
  * Background Image 
  */
-add_action( 'admin_footer', 'avma_bg' );
+add_action( 'admin_init', 'avma_bg' );
 if ( !function_exists( 'avma_bg' ) ) {
 	function avma_bg () {
 		$avma_bg = avma_get_option ( 'avma_bg' , 'design_tab' );
 		if ( !empty( $avma_bg ) ) {
-		echo $avma_bg ;			
+		return $avma_bg ;			
 		}
 	}
 }
@@ -107,46 +107,93 @@ if ( !function_exists( 'avma_bg' ) ) {
 /**
  * Page Title 
  */
-add_action( 'admin_footer', 'avma_page_title' );
+add_action( 'admin_init', 'avma_page_title' );
 if ( !function_exists( 'avma_page_title' ) ) {
 	function avma_page_title () {
 		$avma_page_title = avma_get_option ( 'avma_page_title' , 'design_tab' );
 		if ( !empty( $avma_page_title ) ) {
-		 $avma_page_title ;	
+		 return $avma_page_title ;	
 		 }else{
-		 $avma_page_title = get_bloginfo();
-		 }		
+		 return $avma_page_title = get_bloginfo();
+		}		
 	}
 }
 
 /**
  * Template Header Title 
  */
-add_action( 'admin_footer', 'avma_content_title' );
+add_action( 'admin_init', 'avma_content_title' );
 if ( !function_exists( 'avma_content_title' ) ) {
 	function avma_content_title () {
 		$avma_content_title = avma_get_option ( 'avma_content_title' , 'design_tab' );
 		if ( !empty( $avma_content_title ) ) {
-		 _e( $avma_content_title, 'averta-maintenance' ) ;	
+		 return $avma_content_title ;	
 		 }else{
-		 $avma_content_title = _e( 'Coming Soon...', 'averta-maintenance' );
+		  return $avma_content_title ;
 		 }		
 	}
 }
-
-add_action( 'admin_footer', 'avma_describ' );
+/**
+ * Maintenace Describtion OutPut
+ */
+add_action( 'admin_init', 'avma_describ' );
 if ( !function_exists( 'avma_describ' ) ) {
 	function avma_describ () {
 		$avma_describ = avma_get_option ( 'avma_describ' , 'design_tab' );
 		if ( !empty( $avma_describ ) ) {
-		 _e( $avma_describ, 'averta-maintenance' ) ;	
-		 }else{
-		 return ;
+		return  $avma_describ ;
+		}		
+	}
+}
+
+/**
+ * Template Logo 
+ */
+add_action( 'admin_init', 'avma_logo' );
+if ( !function_exists( 'avma_logo' ) ) {
+	function avma_logo () {
+		$avma_logo = avma_get_option ( 'avma_logo' , 'design_tab' );
+		if ( !empty( $avma_logo ) ) {
+		return $avma_logo ;			
+		}
+	}
+}
+
+/**
+ * Title Color
+ */
+add_action( 'admin_init', 'vma_title_color' );
+if ( !function_exists( 'vma_title_color' ) ) {
+	function vma_title_color () {
+		$vma_title_color = avma_get_option ( 'vma_title_color' , 'design_tab' );
+		if ( !empty( $vma_title_color ) ) {
+		return $vma_title_color ;  
+		}		
+	}
+}
+
+/**
+ * Describtion Color
+ */
+add_action( 'admin_init', 'avma_body_color' );
+if ( !function_exists( 'avma_body_color' ) ) {
+	function avma_body_color () {
+		$avma_body_color = avma_get_option ( 'avma_body_color' , 'design_tab' );
+		if ( !empty( $avma_body_color ) ) {
+		  return $avma_body_color ;	
 		 }		
 	}
 }
 
-
-
+/**
+ * Describtion Color
+ */
+add_action( 'admin_init', 'avma_style' );
+if ( !function_exists( 'avma_style' ) ) {
+	function avma_style () {
+		$avma_style = avma_get_option ( 'avma_style' , 'design_tab' );
+		 return $avma_style;	
+	}
+}
 
 ?>

@@ -41,16 +41,27 @@ function avma_js_script(){
       })( jQuery );
    </script>  
 </head>
-<title><?php avma_page_title() ?></title>
-<body> <h1><?php avma_content_title() ?></h1>
+<title><?php echo avma_page_title(); ?></title>
+<body> 
+    <img id="avma_logo" src="<?php echo avma_logo() ; ?>"></img>
+    <h1 id="avma_h1"><?php echo avma_content_title() ; ?></h1>
  <style>
-body{
-  background-image: url(<?php AVMA_URL . avma_bg() ; ?>);
-}
+ <?php echo avma_style() ; ?>
+    body{
+      background-image: url(<?php AVMA_URL . avma_bg() ; ?>);
+    }
+    #avma_h1{
+      color: <?php echo vma_title_color() ; ?> ;
+    }
+    #avma_article{
+      color: <?php echo avma_body_color() ; ?> ;
+    }
  </style>
+
 <?php  
 $avma_count_active = avma_get_option ( 'avma_count', 'general_tab' );
 if ( $avma_count_active == 'Active' ) : ?>
+  <article id="avma_article"> <?php echo avma_describ() ; ?></article>
   <ul class="clockdiv" id="countdown">
     <li>
       <span class="days">00</span>
@@ -70,7 +81,6 @@ if ( $avma_count_active == 'Active' ) : ?>
     </li>
   </ul>
 <?php endif ; ?>
-    <article> <?php avma_describ() ?></article>
     <?php wp_footer(); ?> 
 </body>
 </html>
