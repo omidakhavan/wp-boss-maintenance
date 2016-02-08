@@ -6,7 +6,8 @@
  *
  * */
 
-require_once AVMA_DIR . 'admin/includes/class-settings-api.php' ; 
+require_once AVMA_DIR . 'admin/includes/class-settings-api.php' ;
+
 if ( !class_exists('Avma_Settings' ) ):
 class Avma_Settings {
     private $settings_api;
@@ -49,7 +50,7 @@ class Avma_Settings {
      * @return array settings fields
      */
     function get_settings_fields() {
-
+        $admin_email = get_option( 'admin_email' ); 
         $settings_fields = array(
             'general_tab' => array(
                 array(
@@ -145,12 +146,29 @@ class Avma_Settings {
                     'default'           => ''
                 ),
                 array(
+                    'name'              => 'avma_bg_select',
+                    'label'             => __( 'Choose Background Type', 'avla-maintenance' ),
+                    'type'              => 'select',
+                    'options'           => array(
+                        'color'        => 'Color',
+                        'image'        => 'User Image',
+                        'defualt'      => 'Defualt Pictures'
+                    )
+                ),
+                array(
                     'name'              => 'avma_bg',
                     'label'             => __( 'Background Image', 'avla-maintenance' ),
                     'desc'              => __( 'Choose background image for maintenace page', 'avla-maintenance' ),
                     'type'              => 'file',
                     'default'           => ''
                 ),
+                array(
+                    'name'              => 'avma_bg_color',
+                    'label'             => __( 'Message Title Color', 'avla-maintenance' ),
+                    'desc'              => __( 'Pick Message Color ', 'avla-maintenance' ),
+                    'type'              => 'color',
+                    'default'           => ''
+                ),                
                 array(
                     'name'              => 'avma_style',
                     'label'             => __( 'Costum Style', 'avla-maintenance' ),
@@ -172,7 +190,7 @@ class Avma_Settings {
                     'label'             => __( 'Admin E-mail', 'avla-maintenance' ),
                     'desc'              => __( 'Users message will be sent to this address.', 'avla-maintenance' ),
                     'type'              => 'text',
-                    'default'           => ''
+                    'default'           => $admin_email
                 ),
                 array(
                     'name'              => 'avma_newsle_active',
@@ -184,13 +202,20 @@ class Avma_Settings {
                 )),
                 array(
                     'name'              => 'avma_news_select',
-                    'label'             => __( 'Feed Burnuer', 'avla-maintenance' ),
+                    'label'             => __( 'Feed Burner', 'avla-maintenance' ),
                     'desc'              => __( 'Select Mailing System.', 'avla-maintenance' ),
                     'type'              => 'select',
                     'options'           => array(
                         'avma'        => 'Averta Subscriber',
-                        'Feed'        => 'FeedBurner'
+                        'FeedBurner'  => 'FeedBurner'
                     )
+                ),
+                array(
+                    'name'              => 'avma_content_feed',
+                    'label'             => __( 'Feed Burner', 'avla-maintenance' ),
+                    'desc'              => __( 'Your feedburner link.', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
                 ),
                 array(
                     'name'               => 'avma_social',
@@ -266,6 +291,7 @@ class Avma_Settings {
         $this->settings_api->show_forms();
         echo '</div>';
     }
+
     /**
      * Get all the pages
      *

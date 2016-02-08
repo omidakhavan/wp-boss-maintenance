@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * @link              http://averta.net
  * @since             1.0.0
@@ -26,16 +26,18 @@ class Avma_Settings_Api {
     /**
      * Enqueue scripts and styles
      */
+    // add js to setting page
     function admin_enqueue_scripts() {
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_media();
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_script( 'jquery' );
+        wp_enqueue_script( 'admin-setting-js', AVMA_URL. '/admin/js/avma-maintenace.js', array( 'jquery') );
         wp_register_style('avma_js_time_style' , AVMA_URL. '/admin/css/jquery-ui-timepicker-addon.css');
         wp_enqueue_style( 'avma_js_time_style' );   
         wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
         wp_enqueue_script( 'jquery-script', 'http://code.jquery.com/ui/1.10.4/jquery-ui.js');
-        wp_enqueue_script( 'jquery-time-picker' ,  AVMA_URL. '/admin/js/jquery-ui-timepicker-addon.js',  array('jquery' ));    
+        wp_enqueue_script( 'jquery-time-picker' ,  AVMA_URL. '/admin/js/jquery-ui-timepicker-addon.js',  array( 'jquery' ) );    
     }
     /**
      * Set settings sections
@@ -145,7 +147,7 @@ class Avma_Settings_Api {
         $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
         $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
         $type  = isset( $args['type'] ) ? $args['type'] : 'text';
-        $html  = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"/>', $type, $size, $args['section'], $args['id'], $value );
+        $html  = sprintf( '<input type="%1$s" class="%2$s-text" id="%3$s_%4$s_" name="%3$s[%4$s]" value="%5$s"/>', $type, $size, $args['section'], $args['id'], $value );
         $html  .= $this->get_field_description( $args );
         echo $html;
     }
@@ -223,7 +225,7 @@ class Avma_Settings_Api {
     function callback_select( $args ) {
         $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
         $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
-        $html  = sprintf( '<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id'] );
+        $html  = sprintf( '<select class="%1$s" name="%2$s[%3$s]" id="%2$s_%3$s_">', $size, $args['section'], $args['id'] );
         foreach ( $args['options'] as $key => $label ) {
             $html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $value, $key, false ), $label );
         }

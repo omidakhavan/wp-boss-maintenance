@@ -48,7 +48,7 @@ function avma_js_script(){
  <style>
  <?php echo avma_style() ; ?>
     body{
-      background-image: url(<?php AVMA_URL . avma_bg() ; ?>);
+      background-image: url(<?php AVMA_URL . avma_bg() ?>);
     }
     #avma_h1{
       color: <?php echo vma_title_color() ; ?> ;
@@ -81,6 +81,33 @@ if ( $avma_count_active == 'Active' ) : ?>
     </li>
   </ul>
 <?php endif ; ?>
-    <?php wp_footer(); ?> 
+    <?php wp_footer();?>
+    <?php do_action( 'avma_frm' ) ;  
+    $avma_cntct_active = avma_get_option ( 'avma_contact_active', 'com_tab' );
+    if ( $avma_cntct_active == 'Active' ) : 
+    ?>
+      <h2><?php _e( 'Contact Us', 'averta-maintenance' ); ?></h2>
+      <form action="avma-template.php" method="POST"> 
+        <p class="name">
+          <input type="text" name="name" id="name" value= "<?php $name ?>" placeholder="<?php _e( 'Example Name' , 'averta-maintenance' ) ; ?>" required/>
+          <label for="name"><?php _e ( 'Name','averta-maintenance' );?></label>
+        </p>
+
+        <p class="mail">
+          <input type="text" name="mail" id="mail" value="<?php $mail ?>" placeholder=" <?php _e ( 'mail@example.com', 'averta-maintenance' ); ?> " required/>
+          <label for="mail"><?php _e ( 'Email', 'averta-maintenance');?></label>
+        </p>
+        <p class="msg">
+          <textarea name="msg" row="4" cols="50" placeholder="<?php _e ( 'Write something to us maximum 300 character', 'averta-maintenance' ); ?>"  required /></textarea>
+          <label for="msg"><?php _e( 'Message' , 'averta-maintenance' ); ?></label>
+        </p>
+        
+        <p class="submit">
+          <input type="submit" name="submit" value="Send" />
+        </p>
+      </form>
+
+      <?php  avma_cntct_frm() ?>
+  <?php endif ; ?>
 </body>
 </html>

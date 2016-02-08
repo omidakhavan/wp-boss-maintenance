@@ -99,7 +99,7 @@ if ( !function_exists( 'avma_bg' ) ) {
 	function avma_bg () {
 		$avma_bg = avma_get_option ( 'avma_bg' , 'design_tab' );
 		if ( !empty( $avma_bg ) ) {
-		return $avma_bg ;			
+		echo $avma_bg ;			
 		}
 	}
 }
@@ -195,5 +195,55 @@ if ( !function_exists( 'avma_style' ) ) {
 		 return $avma_style;	
 	}
 }
+
+/**
+ * [avma_cntct_frm description]
+ * @return [type] [description]
+ */
+function avma_cntct_frm() {
+	if ( isset( $_POST[ 'name' ] ) || isset( $_POST[ 'mail' ] ) || isset( $POST[ 'msg' ] ) ) {
+			
+		$avma_error = array() ;
+		$name = trim( $_POST [ 'name' ] );
+		// validate name field
+		if ( !preg_match('/^[a-zA-Z ]*$/', $name) ) {
+			$name = "";
+			$avma_error['name'] = _e( 'Please enter valid name', 'avla-maintenance' );	
+			return $avma_error ;						
+		}
+		$mail = trim( $_POST [ 'mail' ] );
+		//validate mail field
+		if ( !filter_var( $mail, FILTER_VALIDATE_EMAIL ) ) {
+			$mail = "" ;
+			$avma_error ['mail'] = _e( 'Pllease enter valid email address', 'avla-maintenance' );
+			return $avma_error ;
+		}
+		$GLOBALS['$name'] ;
+		$GLOBALS['$mail'] ;
+		$msg  = trim( $_POST [ 'msg' ] );
+		//success
+		if ( empty( $avma_error ) ) { 
+			$form_content = __( "User Mail : $mail \n User Message: $msg", 'avla-maintenance' );
+			$avma_admin_mail = avma_get_option ( 'avma_contact_email', 'com_tab' );
+			$subject = __( 'Maintenace Message', 'avla-maintenance' );
+			wp_mail( $avma_admin_mail, $subject, $form_content ) ;
+			echo '<span id="avma_suc">' ;
+			 _e( 'Your message was successfuly sent!', 'avla-maintenance' );
+			 echo  '</span> ' ;
+	    }else{
+	    	return $avma_error ;
+	    }
+	}		
+}
+
+
+
+
+
+
+
+
+
+
 
 ?>
