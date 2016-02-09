@@ -236,6 +236,131 @@ function avma_cntct_frm() {
 	}		
 }
 
+/**
+ * [avma_feedburner description]
+ * @param  [type] $input [description]
+ * @return [type]        [description]
+ */
+function avma_feedburner( $input ) { 
+$avma_feed_act = avma_get_option( 'avma_newsle_active', 'com_tab' );
+$avma_select_feed = avma_get_option ( 'avma_news_select', 'com_tab' );
+$avma_feedburn = avma_get_option( 'avma_sub_feed', 'com_tab' );
+$avma_feed_btn = avma_get_option( 'avma_sub_feed_btn', 'com_tab' );
+$avma_feed_txt = avma_get_option( 'avma_sub_feed_txt', 'com_tab' );
+
+	switch ($input) {
+		case 'active':
+			return $avma_feed_act ;
+			break;
+		case 'select':
+			return $avma_select_feed;
+			break;
+		case 'link':
+			return $avma_feedburn;
+			break;
+		case 'btn':
+			return $avma_feed_btn;
+			break;
+		case 'txt':
+			return $avma_feed_txt;
+			break;		
+		
+		default:
+			return 'not match!' ;
+			break;
+	}
+
+}
+/**
+ * [avma_social description]
+ * @param  [type] $input [description]
+ * @return [type]        [description]
+ */
+function avma_social( $input ) { 
+	$avma_social    = avma_get_option( 'avma_social'   , 'com_tab' );
+	$avma_social_fa = avma_get_option( 'avma_social_fa', 'com_tab' );
+	$avma_social_tw = avma_get_option( 'avma_social_tw', 'com_tab' );
+	$avma_social_in = avma_get_option( 'avma_social_in', 'com_tab' );
+	$avma_social_yo = avma_get_option( 'avma_social_yo', 'com_tab' );
+	$avma_social_g  = avma_get_option( 'avma_social_g' , 'com_tab' );
+	$avma_social_pi = avma_get_option( 'avma_social_pi', 'com_tab' );
+	$avma_social_li = avma_get_option( 'avma_social_li', 'com_tab' );
+	$avma_social_dr = avma_get_option( 'avma_social_dr', 'com_tab' );
+	$avma_social_gi = avma_get_option( 'avma_social_gi', 'com_tab' );
+		
+		switch ( $input ) {
+			case 'active':
+				return $avma_social ;
+				break;
+			case 'facebook':
+				if ( !empty( $avma_social_fa ) ) { 
+					echo  "<div id='avma_fa'><a href= $avma_social_fa ><img src='' /></a></div>" ;
+					break;
+				}else{
+					break;	
+				}	
+			case 'twitter':
+				if ( !empty( $avma_social_tw ) ) { 
+					echo "<div id='avma_tw'><a href= $avma_social_tw ><img src='' /></a></div>" ;
+					break;
+			    }else{
+			    	break;
+			    }
+			case 'instagram':
+				if 	( !empty( $avma_social_in ) ) { 
+					echo "<div id='avma_in'><a href= $avma_social_in><img src='' /></a></div>" ;
+					break;
+			    }else{
+			    	break;
+			    }
+			case 'youtube':
+				if ( !empty( $avma_social_yo ) ) { 
+					echo "<div id='avma_yo'><a href= $avma_social_yo ><img src='' /></a></div>" ;
+					break;
+			    }else{
+			    	break;
+			    }
+			case 'googleplus':
+				if ( !empty( $avma_social_g ) ) { 
+					echo "<div id='avma_g'><a href=$avma_social_g ><img src='' /></a></div>" ;
+					break;	
+			    }else{
+			    	break;
+			    }
+			case 'pintrest':
+				if ( !empty( $avma_social_pi ) ) { 
+					echo "<div id='avma_pi'><a href= $avma_social_pi ><img src='' /></a></div> ";
+					break;
+			    }else{
+			    	break;
+			    }
+			case 'linkedin':
+				if ( !empty( $avma_social_li ) ) { 
+					echo "<div id='avma_li'><a href= $avma_social_li><img src='' /></a></div>" ;
+					break;
+			    }else{
+			    	break;
+			    }
+			case 'dribble':
+				if ( !empty ( $avma_social_dr ) ) { 
+					echo "<div id='avma_dr'><a href= $avma_social_dr ><img src='' /></a></div>" ;
+					break;
+			    }else{
+			    	break;
+			    }
+			case 'github':
+				if ( !empty( $avma_social_gi ) ) { 
+					echo "<div id='avma_fa'><a href= $avma_social_gi'><img src='' /></a></div>" ;
+					break;
+			    }else{
+			    	break;
+			    }
+
+			default:
+
+				break;
+		}	
+}
 
 
 
@@ -245,5 +370,3 @@ function avma_cntct_frm() {
 
 
 
-
-?>

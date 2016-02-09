@@ -211,11 +211,25 @@ class Avma_Settings {
                     )
                 ),
                 array(
-                    'name'              => 'avma_content_feed',
-                    'label'             => __( 'Feed Burner', 'avla-maintenance' ),
+                    'name'              => 'avma_sub_feed',
+                    'label'             => __( 'FeedBurner', 'avla-maintenance' ),
                     'desc'              => __( 'Your feedburner link.', 'avla-maintenance' ),
                     'type'              => 'text',
-                    'default'           => ''
+                    'default'           => ' http://feeds2.feedburner.com/( only enter this part )'
+                ),
+                array(
+                    'name'              => 'avma_sub_feed_btn',
+                    'label'             => __( 'FeedBurner Button', 'avla-maintenance' ),
+                    'desc'              => __( 'Feed Burner Button Text.', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => 'Notify Me!'
+                ),
+                array(
+                    'name'              => 'avma_sub_feed_txt',
+                    'label'             => __( 'FeedBurner Text', 'avla-maintenance' ),
+                    'desc'              => __( 'Edit text subscribtion placeholder.', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => 'Subscribe For Feed...'
                 ),
                 array(
                     'name'               => 'avma_social',

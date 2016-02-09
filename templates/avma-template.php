@@ -109,5 +109,26 @@ if ( $avma_count_active == 'Active' ) : ?>
 
       <?php  avma_cntct_frm() ?>
   <?php endif ; ?>
+      <?php  if ( avma_feedburner( 'active' ) == 'active' && avma_feedburner( 'select' ) == 'FeedBurner' ) : ?>
+        <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo avma_feedburner( 'link' ) ; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <input type="hidden" value="<?php echo avma_feedburner( 'link' ) ?>" name="uri"/>
+            <input type="hidden" name="loc" value="en_US"/>
+            <input id="notify_txt" type="text" name="email" placeholder="<?php echo avma_feedburner( 'txt' ); ?>"/>
+            <button id="notify_btn" type="submit"><?php echo avma_feedburner( 'btn' ) ; ?></button>
+        </form>
+      <?php endif ; ?>
+      <?php if ( avma_social( 'active' ) == 'active' ) {
+         avma_social( 'facebook' );
+         avma_social( 'twitter' );
+         avma_social( 'instagram' );
+         avma_social( 'youtube' );
+         avma_social( 'googleplus' );
+         avma_social( 'pintrest' );
+         avma_social( 'linkedin' );
+         avma_social( 'dribble' );
+         avma_social( 'github' );
+      }  
+      ?>
 </body>
 </html>
+
