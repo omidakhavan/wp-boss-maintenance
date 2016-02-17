@@ -7,8 +7,6 @@
  * */
 
 require_once AVMA_DIR . 'admin/includes/class-settings-api.php' ;
-
-if ( !class_exists('Avma_Settings' ) ):
 class Avma_Settings {
 
     private $settings_api;
@@ -329,4 +327,3 @@ class Avma_Settings {
         return $pages_options;
     }
 }
-endif;

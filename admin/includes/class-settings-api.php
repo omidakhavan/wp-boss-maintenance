@@ -1,12 +1,11 @@
- <?php
+<?php
 /**
  * @link              http://averta.net
  * @since             1.0.0
  * @package           averta-maintenance
  *
- * */
-
-if ( !class_exists( 'Avma_Settings_Api' ) ):
+ *
+ */
 class Avma_Settings_Api {
     /**
      * settings sections array
@@ -314,18 +313,18 @@ class Avma_Settings_Api {
         $html  .= $this->get_field_description( $args );
         echo $html;
     }
-/**
- * [callback_datetime description]
- * @param  [type] $args [description]
- * @return [type]       [description]
- */
-function callback_datetime($args){
-     extract( $args );
-        $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-        $html  = sprintf( '<input type="datetime" id="datetimepicker" name="%1$s[%2$s]" value="%3$s" class="datetimepicker" />', $args['section'], $args['id'], $value );
-        $html  .= $this->get_field_description( $args );
-        echo $html;
-}
+    /**
+     * [callback_datetime description]
+     * @param  [type] $args [description]
+     * @return [type]       [description]
+     */
+    function callback_datetime($args){
+         extract( $args );
+            $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
+            $html  = sprintf( '<input type="datetime" id="datetimepicker" name="%1$s[%2$s]" value="%3$s" class="datetimepicker" />', $args['section'], $args['id'], $value );
+            $html  .= $this->get_field_description( $args );
+            echo $html;
+    }
     /**
      * Sanitize callback for Settings API
      */
@@ -427,9 +426,8 @@ function callback_datetime($args){
         ?>
         <script>
             jQuery(document).ready(function($) {
-                jQuery(document).ready(function(){
+                
                 $('.datetimepicker').datetimepicker(); 
-                });
                 //Initiate Color Picker
                 $('.wp-color-picker-field').wpColorPicker();
                 // Switches option sections
@@ -499,4 +497,3 @@ function callback_datetime($args){
         <?php
     }
 }
-endif;

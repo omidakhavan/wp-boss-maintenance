@@ -267,7 +267,7 @@ function avma_social( $input ) {
 /**
  * add subscriber to mailchimp
  */
-//Get mailchimp api key
+//Get mailchimp api key 
 $avma_chimp = avma_get_option( 'avma_chimp_api', 'com_tab' );
 //get
 $avma_chimp_id = avma_get_option( 'avma_chimp_list', 'com_tab' );
@@ -284,6 +284,7 @@ $result_add = $av_chimp->post("lists/$avma_chimp_id/members", [
             ]);
 $last_error = $av_chimp->getLastError();
 global $last_error;
+
 
 /**
  * [chim_msg generate message of mailchimp operation]

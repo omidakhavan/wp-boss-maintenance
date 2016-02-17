@@ -44,10 +44,11 @@ class Avma_Maintenance {
 
 		$this->plugin_name = 'averta-maintenance';
 		$this->version = '1.0.0';
-
 		$this->load_dependencies();
 		$this->set_locale();
-		$this->define_admin_hooks();
+		if ( is_admin() ) {
+			$this->define_admin_hooks();
+	    }
 		$this->define_public_hooks();
 
 	}
