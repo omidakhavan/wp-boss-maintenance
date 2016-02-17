@@ -67,7 +67,7 @@
         thisEl.find(".minutes").text(minutes);
         thisEl.find(".seconds").text(seconds);
       } else { 
-        alert("Invalid date. Here's an example: 12 Tuesday 2012 17:30:00");
+        alert("Invalid date. Here's an example: 14 Feb 2016 17:30:00");
         clearInterval(interval); 
       }
     }
@@ -79,6 +79,17 @@
     interval = setInterval(countdown_proc, 1000);
     
   }
+  
+  $(document).ready(function() {
+    var ctdown = { avma_ct : avma.avma_date};
+    var enddate = ctdown.avma_ct ;
+    $("#countdown").countdown({
+      date: enddate , 
+      format: "off" 
+    },
+    function() { 
+    });
+  });
 
 
 })( jQuery );

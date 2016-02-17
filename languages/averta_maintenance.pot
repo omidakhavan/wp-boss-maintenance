@@ -1,0 +1,356 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: averta maintenance\n"
+"POT-Creation-Date: 2016-02-16 15:59-0800\n"
+"PO-Revision-Date: 2016-02-16 15:58-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: averta-maintenance.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/includes/avma-maintenance-functions.php:65
+msgid "Coming Soon Plugin Was Activated"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:109
+msgid "Please enter valid name"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:116
+msgid "Please enter valid email address"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:126
+msgid "Maintenace Message"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:129
+msgid "Your message was successfuly sent!"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:296
+msgid "Successfuly Subscribed"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:315
+msgid "First view"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:316
+msgid ""
+"<P><strong>Active Plugin<strong/><p>When you triggered Maintenance to active,"
+"There are three way in front of you First, you can check the active and your "
+"site will be directed to custom template Secondly, will happen when you have "
+"custom link and fill the special place that embedded Thirdly, when you want "
+"to take special page to coming soon just go to your specific page and on the "
+"right hand combo box select averta maintenace template."
+"<P><strong>Counter<strong/><p>When you active plugin you can choose template "
+"with counter or without any counter demonstration the time calculation its "
+"matching with you local time but date will be calculate from js date "
+"function and has not any relation with you local date.<P><strong>Template "
+"Background<strong/><p>You whatever you want can change your style the one of "
+"the customazation section is change your template background color or set "
+"image for your background please keep in your mind that background image "
+"priority higher than background color."
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:322
+msgid "Developer"
+msgstr ""
+
+#: admin/includes/avma-maintenance-functions.php:323
+msgid ""
+"As intrested user you can check this out <a href=\"http://averta.net\" > "
+"Averta </a>"
+msgstr ""
+
+#: admin/includes/avma-maintenance-temp.php:34
+msgid "Averta Coming Soon!"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:35
+msgid "General Settings"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:39
+msgid "Design Settings"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:43
+msgid "Contact Settings"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:59
+msgid "Plugin Activation"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:61
+msgid "Active / Deactive"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:66
+msgid "Dashboard Notifaction"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:67
+msgid "Reminder notifaction message appear on dashboard"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:72
+msgid "Redirect To :"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:73
+msgid "Redirect to costum page (for example http://example.com)."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:79
+msgid "Exclude"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:80
+msgid "Exclude Page From Maintenance Mode ( Seprate With Comma )"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:85
+msgid "CountDown Activation"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:94
+msgid "Date"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:95
+msgid "Automatically disable maintenace mode at this date(mm/dd/yyyy 00:00:00)"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:103
+msgid "Logo"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:104
+msgid "Choose logo for your maintenace page"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:110
+msgid "Page Title"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:111
+msgid "Title of page Notice : if empty will be show your defualt blog info."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:117
+msgid "Message Title"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:118
+msgid "Title of message that you want to display on your maintenace page."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:124
+#: admin/includes/class-avma-maintenance-setting.php:137
+#: admin/includes/class-avma-maintenance-setting.php:160
+msgid "Message Title Color"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:125
+#: admin/includes/class-avma-maintenance-setting.php:138
+#: admin/includes/class-avma-maintenance-setting.php:161
+msgid "Pick Message Color "
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:131
+msgid "Maintenance Message"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:144
+msgid "Choose Background Type"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:153
+msgid "Background Image"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:154
+msgid "Choose background image for maintenace page"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:167
+msgid "Costum Style"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:168
+msgid "Edit template style"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:175
+msgid "Contact Form Activation"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:183
+msgid "Admin E-mail"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:184
+msgid "Users message will be sent to this address."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:190
+msgid "NewsLetter Activation"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:198
+msgid "News Letter"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:199
+msgid "Select Mailing System."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:208
+msgid "MailChimp Api"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:209
+msgid "Insert your mailchimp api key here."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:215
+msgid "MailChimp List Id"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:216
+msgid ""
+"Insert your mailchimp id here ex(http://kb.mailchimp.com/lists/managing-"
+"subscribers/find-your-list-id)."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:222
+msgid "FeedBurner"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:223
+msgid " http://feeds2.feedburner.com/( only enter this part )."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:229
+msgid "Subscriber Button"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:230
+msgid "Subscriber Button Text."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:236
+msgid "Subscriber Text"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:237
+msgid "Edit subscribtion placeholder."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:243
+msgid "Social Networks"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:244
+msgid "Show your social networks link."
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:253
+msgid "Facebook"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:259
+msgid "Twitter"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:265
+msgid "Instagram"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:271
+msgid "You Tube"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:277
+msgid "Google +"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:283
+msgid "Pinterest"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:289
+msgid "Linked In"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:295
+msgid "Dribbble"
+msgstr ""
+
+#: admin/includes/class-avma-maintenance-setting.php:301
+msgid "Github"
+msgstr ""
+
+#: admin/includes/class-settings-api.php:287
+msgid "Choose Best Image"
+msgstr ""
+
+#: templates/avma-template.php:74
+msgid "Contact Us"
+msgstr ""
+
+#: templates/avma-template.php:77
+msgid "Example Name"
+msgstr ""
+
+#: templates/avma-template.php:78
+msgid "Name"
+msgstr ""
+
+#: templates/avma-template.php:82
+msgid "mail@example.com"
+msgstr ""
+
+#: templates/avma-template.php:83
+msgid "Email"
+msgstr ""
+
+#: templates/avma-template.php:86
+msgid "Write something to us maximum 300 character"
+msgstr ""
+
+#: templates/avma-template.php:87
+msgid "Message"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "averta maintenance"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Creative Comming Soon And Maintenace Page For Wordpress With Usefull Options."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Averta"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://averta.net.com/"
+msgstr ""

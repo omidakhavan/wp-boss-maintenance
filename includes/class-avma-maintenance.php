@@ -1,30 +1,9 @@
 <?php
 
 /**
- * The file that defines the core plugin class
- *
- * A class definition that includes attributes and functions used across both the
- * public-facing side of the site and the admin area.
- *
  * @link              http://averta.net
  * @since             1.0.0
  * @package           averta-maintenance
- * @subpackage        averta-maintenance/includes
- */
-
-/**
- * The core plugin class.
- *
- * This is used to define internationalization, admin-specific hooks, and
- * public-facing site hooks.
- *
- * Also maintains the unique identifier of this plugin as well as the current
- * version of the plugin.
- *
- * @link              http://averta.net
- * @since             1.0.0
- * @package           averta-maintenance
- * @subpackage        averta-maintenance/includes
  */
 
 class Avma_Maintenance {
@@ -59,11 +38,6 @@ class Avma_Maintenance {
 
 	/**
 	 * Define the core functionality of the plugin.
-	 *
-	 * Set the plugin name and the plugin version that can be used throughout the plugin.
-	 * Load the dependencies, define the locale, and set the hooks for the admin area and
-	 * the public-facing side of the site.
-	 *
 	 * @since    1.0.0
 	 */
 	public function __construct() {
@@ -83,10 +57,10 @@ class Avma_Maintenance {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - averta-maintenance-loader. Orchestrates the hooks of the plugin.
-	 * - Plugin_Name_i18n. Defines internationalization functionality.
-	 * - Plugin_Name_Admin. Defines all hooks for the admin area.
-	 * - Plugin_Name_Public. Defines all hooks for the public side of the site.
+	 * - avma-maintenance-loader. Orchestrates the hooks of the plugin.
+	 * - avma_maintenance_i18n. Defines internationalization functionality.
+	 * - avma_maintenance_Admin. Defines all hooks for the admin area.
+	 * - avma_Maintenance_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -140,10 +114,6 @@ class Avma_Maintenance {
 
 	/**
 	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Plugin_Name_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
 	 * @since    1.0.0
 	 * @access   private
 	 */
@@ -180,7 +150,7 @@ class Avma_Maintenance {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Avma_Maintenance_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );

@@ -10,6 +10,7 @@ require_once AVMA_DIR . 'admin/includes/class-settings-api.php' ;
 
 if ( !class_exists('Avma_Settings' ) ):
 class Avma_Settings {
+
     private $settings_api;
     function __construct() {
         $this->settings_api = new Avma_Settings_API;
@@ -95,13 +96,6 @@ class Avma_Settings {
                     'type'              => 'datetime',
                     'default'           => ''
                 ),
-                array(
-                    'name'              => 'avma_count_color',
-                    'label'             => __( 'CountDown Color', 'avla-maintenance' ),
-                    'desc'              => __( 'Pick CountDown Color ', 'avla-maintenance' ),
-                    'type'              => 'color',
-                    'default'           => ''
-                ), 
             ),
             'design_tab' => array(
                 array(
@@ -151,8 +145,7 @@ class Avma_Settings {
                     'type'              => 'select',
                     'options'           => array(
                         'color'        => 'Color',
-                        'image'        => 'User Image',
-                        'defualt'      => 'Defualt Pictures'
+                        'image'        => 'User Image'
                     )
                 ),
                 array(
@@ -202,32 +195,46 @@ class Avma_Settings {
                 )),
                 array(
                     'name'              => 'avma_news_select',
-                    'label'             => __( 'Feed Burner', 'avla-maintenance' ),
+                    'label'             => __( 'News Letter', 'avla-maintenance' ),
                     'desc'              => __( 'Select Mailing System.', 'avla-maintenance' ),
                     'type'              => 'select',
                     'options'           => array(
-                        'avma'        => 'Averta Subscriber',
-                        'FeedBurner'  => 'FeedBurner'
+                        'FeedBurner'  => 'FeedBurner',
+                        'mailchimp'   => 'Mail Chimp'
                     )
+                ),
+                array(
+                    'name'              => 'avma_chimp_api',
+                    'label'             => __( 'MailChimp Api', 'avla-maintenance' ),
+                    'desc'              => __( 'Insert your mailchimp api key here.', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_chimp_list',
+                    'label'             => __( 'MailChimp List Id', 'avla-maintenance' ),
+                    'desc'              => __( 'Insert your mailchimp id here ex(http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id).', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
                 ),
                 array(
                     'name'              => 'avma_sub_feed',
                     'label'             => __( 'FeedBurner', 'avla-maintenance' ),
-                    'desc'              => __( 'Your feedburner link.', 'avla-maintenance' ),
+                    'desc'              => __( ' http://feeds2.feedburner.com/( only enter this part ).', 'avla-maintenance' ),
                     'type'              => 'text',
-                    'default'           => ' http://feeds2.feedburner.com/( only enter this part )'
+                    'default'           => ''
                 ),
                 array(
                     'name'              => 'avma_sub_feed_btn',
-                    'label'             => __( 'FeedBurner Button', 'avla-maintenance' ),
-                    'desc'              => __( 'Feed Burner Button Text.', 'avla-maintenance' ),
+                    'label'             => __( 'Subscriber Button', 'avla-maintenance' ),
+                    'desc'              => __( 'Subscriber Button Text.', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => 'Notify Me!'
                 ),
                 array(
                     'name'              => 'avma_sub_feed_txt',
-                    'label'             => __( 'FeedBurner Text', 'avla-maintenance' ),
-                    'desc'              => __( 'Edit text subscribtion placeholder.', 'avla-maintenance' ),
+                    'label'             => __( 'Subscriber Text', 'avla-maintenance' ),
+                    'desc'              => __( 'Edit subscribtion placeholder.', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => 'Subscribe For Feed...'
                 ),

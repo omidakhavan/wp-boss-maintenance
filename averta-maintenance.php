@@ -5,15 +5,12 @@
  * @since             1.0.0
  * @package           averta-maintenance
  *
- * @wordpress-plugin
  * Plugin Name:       averta maintenance 
- * Description:       Creative Comming Soon And Maintenace Page For Wordpress With Usefull Options.
+ * Description:       Comming Soon And Maintenace Page For Wordpress With Usefull Options.
  * Version:           1.0.0
  * Author:            Averta
  * Author URI:        http://averta.net.com/
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       avla_maint
+ * Text Domain:       avla_maintenance
  * Domain Path:       /languages
  */
 
@@ -31,22 +28,22 @@ define( 'AVMA_URL', plugins_url( '' , __FILE__ ));
  * The code that runs during plugin activation.
  * This action is documented in includes/class-plugin-name-activator.php
  */
-function activate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
-	Plugin_Name_Activator::activate();
+function avma_activate() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-avma-maintenance-activator.php';
+	Avma_Meitenance_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-plugin-name-deactivator.php
  */
-function deactivate_plugin_name() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+function avma_deactive() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-avma-maintenance-deactivator.php';
+	Avma_Maintenance_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_avma-maintenance' );
-register_deactivation_hook( __FILE__, 'deactivate_avma-maintenance' );
+register_activation_hook( __FILE__, 'avma_activate' );
+register_deactivation_hook( __FILE__, 'avma_deactive' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -57,16 +54,12 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-avma-maintenance.php';
 /**
  * Begins execution of the plugin.
  *
- * Since everything within the plugin is registered via hooks,
- * then kicking off the plugin from this point in the file does
- * not affect the page life cycle.
- *
  * @since    1.0.0
  */
-function run_Avma_maintenance() {
+function run_avma_maintenance() {
 
-	$plugin = new Avma_maintenance();
+	$plugin = new Avma_Maintenance();
 	$plugin->run();
 
 }
-run_Avma_maintenance();
+run_avma_maintenance();
