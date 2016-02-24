@@ -4,108 +4,158 @@
  * @package           averta-maintenance
  *
  * */
+@import url(https://fonts.googleapis.com/css?family=Raleway:600,700,300,400,400italic,500);
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+
+body{
+	text-align: center;
+	background-color: #ffffff;
+}
+
+#avma_content{
+	background-color: #ebe9e9;
+	margin: 41px 41px 0 41px;
+	padding: 97px 0 0 0;
+}
+
+#avma_title{
+	font-size: 27.54px;
+	font-family: 'Raleway', sans-serif;
+	padding: 70px 0 0 0;
+	color: #3d3d3d;
+}
+
+#avma_messages{
+	padding: 40px 0 0 0;
+	font-size: 16px;
+	font-family: 'Raleway',sans-serif;
+	color: #606060;
+}
+.avma_clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+#avma_counter{
+	padding: 100px 0 80px 0;
+
+}
+
 ul#countdown {
-	margin: 10px auto;
-	padding: 0;
+	margin: auto;
+    width: 40%;
 }
 ul#countdown li{
-	background-color: #333;
-	border: 2px solid #fff;
-	color: #fff;
+	align: center;
+	color: #3d3d3d;
 	display: inline;
 	float: left;
-	font: normal bold 36px Arial;
+	font-family: 'Lato', sans-serif;
+	font-size: 74px;
 	letter-spacing: 5px;
-	margin-left: 5px;
 	text-align: center;
-	width: 60px;
-	border-radius: 6px;
-	box-shadow: 0 0 3px #777;
+	
 }
-ul#countdown span {
-	padding-left: 5px;
+
+ul#countdown li:not(:first-child){
+	padding-left: 140px;
+
+}
+
+ul#countdown p {
+	font-family: 'Lato', sans-serif;
+	font-size: 13px;
 }
 ul#countdown  p.timeRefDays, ul#countdown  p.timeRefHours, ul#countdown  p.timeRefMinutes, ul#countdown  p.timeRefSeconds{
-	font: normal normal 12px Arial;
+	font: 'Raleway:600',sans-serif;
 	letter-spacing: 0;
 	margin: 0;
 	padding-bottom: 5px;
 }
 
-body{
-	text-align: center;
-	background-color: #00ECB9;
-  	font-family: sans-serif;
-  	font-weight: 100;
+.avma_title_news{
+	margin: 100px 0 0 0;
+	font-family: 'Raleway',sans-serif;
+	color: #3d3d3d;
+	font-size: 27.54px;
 }
 
-h1{
-  color: #396;
-  font-weight: 100;
-  font-size: 40px;
-  margin: 40px 0px 20px;
+.avma_msg_news{
+	margin: 47px 0 0 0 ;
+	font-family: 'Raleway:600',sans-serif;
+	color: #828282;
+	font-size: 16px;
 }
 
-.clockdiv{
-	font-family: sans-serif;
-	color: #fff;
-	display: inline-block;
-	font-weight: 100;
-	text-align: center;
-	font-size: 30px;
+.avma_form_news{
+	margin-top: 50px;
 }
 
-#avma_logo{
-	text-align: center;
-	margin:100px 0 0 5px;
+.notify_btn{
+    background-color: transparent;
+    background-repeat:no-repeat;
+	font-family: 'Raleway:600',sans-serif;
+	font-size: 13px;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    padding-right: 25px;
+    margin-left: -130px;	
 }
 
-
-h2 {
-	margin-bottom: 20px;
-	color: #474E69;
+#avma_cntct_frm{
+	margin: 100px 0 0 0;
 }
 
-/* ===========================
-   ====== Contact Form ======= 
-   =========================== */
-
-input, textarea {
-	padding: 10px;
-	border: 1px solid #E5E5E5;
-	width: 200px;
-	color: #999999;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;		
+#avma_acontact_title{
+	font-size: 27.54px;
+	font-family: 'Raleway:600',sans-serif;
+	color: #3d3d3d;
 }
 
-textarea {
-	width: 400px;
-	height: 150px;
-	max-width: 400px;
-	line-height: 18px;
+#avma_contact_form{
+	margin: 45px 0 0 0;
 }
 
-input:hover, textarea:hover,
-input:focus, textarea:focus {
-	border-color: 1px solid #C9C9C9;
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;	
+input[type=text]{
+	padding: 0 0 0 24px;
+	font-family: 'Raleway:400italic',sans-serif;
+	border-color: 1px solid #bbbbbb;
+	width: 586px;
+	height: 55px;
+	font-size: 16px;
 }
 
-.form label {
-	margin-left: 10px;
-	color: #999999;
+#avma_msg{
+	height:225px;
+	width:586px;
+	font-size: 16px;
+	padding:20px 0 0 24px;
+	font-family: 'Raleway:400italic',sans-serif;
+	border-color: 1px solid #bbbbbb;
+	position: relative;
+}	
+
+input[type=submit]{
+	margin-top: -21px;
+	background-color: #3d3d3d;
+	color: #ffffff;
+	width: 615px;
+	height: 53px;
+	font-size: 13px;
+	font-family: 'Raleway:600',sans-serif;
+	position: relative;
+	padding: 20px  250px 22px 250px;
+
 }
 
-.submit input {
-	width: 100px; 
-	height: 40px;
-	background-color: #474E69; 
-	color: #FFF;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;		
+#avma_cpy{
+	margin-top: 100px;
+	font-family: 'Raleway',sans-serif;
+	font-size: 14px;
 }

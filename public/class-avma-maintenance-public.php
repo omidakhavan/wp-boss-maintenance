@@ -36,7 +36,7 @@ class Avma_Maintenance_Public {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, AVMA_URL.'/public/css/style.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, AVMA_URL.'/public/css/style.min.css', array(), $this->version, 'all' );
 
 	}
 
@@ -47,7 +47,7 @@ class Avma_Maintenance_Public {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, AVMA_URL.'/public/js/avma-maintenance-js.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, AVMA_URL.'/public/js/avma.min.js', array( 'jquery' ), $this->version, false );
 		
 	}
 

@@ -31,7 +31,7 @@ class Avma_Settings_Api {
         wp_enqueue_media();
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'admin-setting-js', AVMA_URL. '/admin/js/avma-maintenace.js', array( 'jquery') );
+        wp_enqueue_script( 'admin-setting-js', AVMA_URL. '/admin/js/avma-maintenance.js', array( 'jquery') );
         wp_register_style('avma_js_time_style' , AVMA_URL. '/admin/css/jquery-ui-timepicker-addon.css');
         wp_enqueue_style( 'avma_js_time_style' );   
         wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
@@ -209,7 +209,7 @@ class Avma_Settings_Api {
         $html  = '<fieldset>';
         foreach ( $args['options'] as $key => $label ) {
             $html .= sprintf( '<label for="wpuf-%1$s[%2$s][%3$s]">',  $args['section'], $args['id'], $key );
-            $html .= sprintf( '<input type="radio" class="radio" id="wpuf-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked( $value, $key, false ) );
+            $html .= sprintf( '<input type="radio" class="radio" id="wpuf-%1$s_%2$s_%3$s_" name="%1$s[%2$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked( $value, $key, false ) );
             $html .= sprintf( '%1$s</label><br>', $label );
         }
         $html .= $this->get_field_description( $args );
@@ -426,8 +426,10 @@ class Avma_Settings_Api {
         ?>
         <script>
             jQuery(document).ready(function($) {
+                $(document).ready(function(){
+                    $('.datetimepicker').datetimepicker(); 
+                });
                 
-                $('.datetimepicker').datetimepicker(); 
                 //Initiate Color Picker
                 $('.wp-color-picker-field').wpColorPicker();
                 // Switches option sections
