@@ -179,7 +179,8 @@ class Avma_Settings {
                     'type'              => 'select',
                     'options'           => array(
                         'color'        => 'Color',
-                        'image'        => 'User Image'
+                        'image'        => 'User Image',
+                        'video'        => 'video' 
                     )
                 ),
                 array(
@@ -190,10 +191,44 @@ class Avma_Settings {
                     'default'           => ''
                 ),
                 array(
+                    'name'              => 'avma_bg_option',
+                    'label'             => __( 'Background Image Style', 'avla-maintenance' ),
+                    'type'              => 'radio',
+                    'options'           => array(
+                        'stretch'   => 'Stretch',
+                        'contain'   => 'Contain',
+                        'cover'     => 'Cover',
+                        'repeat'    => 'Repeat',
+                        'repeatx'   => 'Repeat-X',
+                        'repeaty'   => 'Repeat-Y'
+                        )
+                ),
+                array(
                     'name'              => 'avma_bg_color',
                     'label'             => __( 'Message Title Color', 'avla-maintenance' ),
                     'desc'              => __( 'Pick Message Color ', 'avla-maintenance' ),
                     'type'              => 'color',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_bg_video',
+                    'label'             => __( 'Background Video', 'avla-maintenance' ),
+                    'desc'              => __( 'Ogg', 'avla-maintenance' ),
+                    'type'              => 'file',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_bg_webm',
+                    'label'             => __( 'Background Video', 'avla-maintenance' ),
+                    'desc'              => __( 'WemM', 'avla-maintenance' ),
+                    'type'              => 'file',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_bg_mp4',
+                    'label'             => __( 'Background Video', 'avla-maintenance' ),
+                    'desc'              => __( 'Mp4', 'avla-maintenance' ),
+                    'type'              => 'file',
                     'default'           => ''
                 ),
                 array(
@@ -221,8 +256,8 @@ class Avma_Settings {
                     'label'             => __( 'Contact Form Activation', 'avla-maintenance' ),
                     'type'              => 'radio',
                     'options'           => array(
-                                        'Active' => 'Active',
-                                        'Deactive'  => 'Deactive'
+                            'Active' => 'Active',
+                            'Deactive'  => 'Deactive'
                 )),
                 array(
                     'name'              => 'avma_contact_email',
@@ -307,6 +342,12 @@ class Avma_Settings {
                     )
                 ),
                 array(
+                    'name'              => 'avma_so_color',
+                    'label'             => __( 'Color Of Social Icons', 'avla-maintenance' ),
+                    'type'              => 'color',
+                    'default'           => ''
+                ),
+                array(
                     'name'              => 'avma_social_fa',
                     'label'             => __( 'Facebook', 'avla-maintenance' ),
                     'type'              => 'text',
@@ -357,6 +398,18 @@ class Avma_Settings {
                 array(
                     'name'              => 'avma_social_gi',
                     'label'             => __( 'Github', 'avla-maintenance' ),
+                    'type'              => 'text',
+                    'default'           => ''
+                ),
+                array(
+                    'name'              => 'avma_div09',
+                    'label'             => __( '<span class="avma_divi" > Footer </span>', 'avla-maintenance' ),
+                    'desc'              => __( '<hr>', 'avla-maintenance' ),
+                    'type'              => 'html'
+                ), 
+                array(
+                    'name'              => 'avma_footer',
+                    'label'             => __( 'Footer Copyright', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),

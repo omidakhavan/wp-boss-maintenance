@@ -31,7 +31,6 @@ class Avma_Settings_Api {
         wp_enqueue_media();
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'admin-setting-js', AVMA_URL. '/admin/js/avma-maintenance.js', array( 'jquery') );
         wp_register_style('avma_js_time_style' , AVMA_URL. '/admin/css/jquery-ui-timepicker-addon.css');
         wp_enqueue_style( 'avma_js_time_style' );   
         wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
@@ -283,7 +282,7 @@ class Avma_Settings_Api {
         $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
         $size  = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
         $id    = $args['section']  . '[' . $args['id'] . ']';
-        $label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose Best Image' );
+        $label = isset( $args['options']['button_label'] ) ? $args['options']['button_label'] : __( 'Choose File' );
         $html  = sprintf( '<input type="text" class="%1$s-text wpsa-url" id="%2$s_%3$s_" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value );
         $html  .= '<input type="button" class="button wpsa-browse" value="' . $label . '" />';
         $html  .= $this->get_field_description( $args );

@@ -30,7 +30,7 @@ module.exports = function(grunt) {
               },
               target: {
                 files: {
-                  'public/css/style.min.css': ['public/css/style.css']
+                  'public/css/style.min.css' : ['public/css/style.css' , 'public/css/animation.css']
                 }
               }
             }

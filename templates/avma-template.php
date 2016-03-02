@@ -28,31 +28,75 @@ require_once AVMA_DIR . 'admin/includes/avma-maintenance-functions.php' ;
         </div>
         <!--Template Header Title-->
         <div class="avma_clearfix" id="avma_title">
-          <span><?php echo avma_get_option ( 'avma_content_title' , 'design_tab' ); ?></span>
+          <span id="avma_cntnt_ti"><?php echo avma_get_option ( 'avma_content_title' , 'design_tab' ); ?></span>
         </div>
        <style>
-       /**Describtion Color**/
-       <?php echo avma_get_option ( 'avma_style' , 'design_tab' ); ; ?>
-          body{
-            background-image: url(<?php AVMA_URL . avma_feedburner('avma_bg') ?>);
-          }
-          /** Title Color */
-          #avma_h1{
-            color: <?php echo avma_get_option ( 'vma_title_color' , 'design_tab' ); ?> ;
-          }
-          /** Body Text Color */
-          #avma_article{
-            color: <?php echo  avma_get_option ( 'avma_body_color' , 'design_tab' ) ; ?> ;
-          }
+        /**Describtion Color**/
+        <?php echo avma_get_option ( 'avma_style' , 'design_tab' ); ; ?>
+        /** Title Color */
+        #avma_cntnt_ti{color: <?php echo avma_get_option ( 'vma_title_color' , 'design_tab' ); ?> ;}
+        /** Body Text Color */
+        #avma_article{color: <?php echo  avma_get_option ( 'avma_body_color' , 'design_tab' ) ; ?> ;}
        </style>
-
+      <!-- BackGround Color --> 
+      <?php if ( avma_get_option( 'avma_bg_select', 'design_tab' ) == 'color' ) : ?>
+        <style>
+           div#avma_content{ background-color: <?php echo avma_get_option( 'avma_bg_color', 'design_tab' ); ?>  } ;
+        </style>
+      <?php endif ; ?>  
+      <!-- image backgound -->  
+      <?php if ( avma_get_option( 'avma_bg_select', 'design_tab') == 'image' ) : ?>
+        <style>
+          div#avma_content{  background-color: transparent; } 
+          body{ background-image: url(<?php AVMA_URL . avma_feedburner('avma_bg') ?>);}
+        </style>
+      <?php endif ; ?> 
+      <!--BackGround Options-->
+      <?php if ( avma_get_option( 'avma_bg_select', 'design_tab') == 'image' ) : 
+      $avma_im_option = avma_get_option( 'avma_bg_option','design_tab' );
+      if ( $avma_im_option == 'stretch') : ?>
+        <style>
+           body{ background-repeat:no-repeat; background-size:100% 100%; } 
+        </style>
+      <?php endif ; ?>
+      <?php if ( $avma_im_option == 'contain') : ?>
+        <style>
+           body{ background-repeat:no-repeat; background-size:contain; } 
+        </style>
+      <?php endif ; ?>
+      <?php if ( $avma_im_option == 'cover') : ?>
+        <style>
+           body{ background-repeat:no-repeat; background-size:cover; } 
+        </style>
+      <?php endif ; ?>
+      <?php if ( $avma_im_option == 'repeat') : ?>
+        <style>
+           body{ background-repeat:repeat; } 
+        </style>
+      <?php endif ; ?>
+      <?php if ( $avma_im_option == 'repeatx') : ?>
+        <style>
+           body{ background-repeat:repeat-x; } 
+        </style>
+      <?php endif ; ?>
+      <?php if ( $avma_im_option == 'repeaty') : ?>
+        <style>
+           body{ background-repeat:repeat-y; } 
+        </style>
+      <?php endif ; ?>
+     <?php endif ; ?>  
+    <div class="avma_clearfix" id="avma_messages">
+      <article id="avma_article"> <?php echo avma_get_option ( 'avma_describ' , 'design_tab' ); ?></article>
+    </div>
     <?php  
     $avma_count_active = avma_get_option ( 'avma_count', 'general_tab' );
-    if ( $avma_count_active == 'Active' ) : ?>
+    if ( $avma_count_active == 'active' ) : 
+      $avma_counter_color = avma_get_option ( 'avma_counter_color', 'general_tab' );
+    ?>
       <!--Maintenace Describtion OutPut-->
-      <div class="avma_clearfix" id="avma_messages">
-        <article> <?php echo avma_get_option ( 'avma_describ' , 'design_tab' ); ?></article>
-      </div>
+      <style>
+        #avma_counter ul#countdown li{ color: <?php echo $avma_counter_color ; ?> }
+      </style>
       <div class="avma_clearfix" id="avma_counter">
         <ul class="clockdiv" id="countdown">
           <li>
@@ -147,10 +191,28 @@ require_once AVMA_DIR . 'admin/includes/avma-maintenance-functions.php' ;
         <?php  avma_cntct_frm() ?>
     <?php endif ; ?>
 
-      <div id="avma_social">
+      <?php if ( avma_get_option( 'avma_bg_select', 'design_tab') == 'video' ) : ?>
+      <!-- Video Background-->
+      <?php
+        $video_ogg  =  avma_get_option( 'avma_bg_video','design_tab' ); 
+        $video_mp4  =  avma_get_option( 'avma_bg_mp4'  ,'design_tab' ); 
+        $video_webm =  avma_get_option( 'avma_bg_webm' ,'design_tab' ); 
+      ?>
+      <div id="avma_video" >
+        <video autoplay loop poster=""  id="bgvid">
+          <style> #avma_content{  background-color: transparent } ; </style>
+            <source src="<?php echo $video_mp4 ?> " type="video/mp4">
+            <source src="<?php echo $video_webm ?> " type="video/webm">
+            <source src="<?php echo $video_ogg; ?> " type="video/ogg">
+            Your browser does not support HTML5 video.
+        </video>
+      </div>
+    <?php endif ; ?>  
+    <div id="footer" class="avma_clearfix">
        <!--Social Link-->
-       <?php   
-       if ( avma_social( 'active' ) == 'active' ) {
+        <ul id="avma_social">
+        <?php   
+        if ( avma_social( 'active' ) == 'active' ) {
            avma_social( 'facebook' );
             avma_social( 'twitter' );
               avma_social( 'instagram' );
@@ -160,14 +222,18 @@ require_once AVMA_DIR . 'admin/includes/avma-maintenance-functions.php' ;
               avma_social( 'linkedin' );
             avma_social( 'dribble' );
            avma_social( 'github' );
-        } 
+       ?><style>
+          ul#avma_social li a{
+            color: <?php avma_social( 'socolor' ); ?>;
+          }
+       </style>
+        <?php };
         ?>
-      </div>
+        </ul>
+    </div>    
+       <!-- footer section --> 
       <div id="avma_cpy">
-        Copyright &copy;
-        <?php echo date("Y"); ?>
-        <?php bloginfo('name'); ?>
-        All Rights Reserved.
+        <?php echo avma_get_option( 'avma_footer' , 'com_tab' ); ?>
       </div>
   </div> 
 </body>

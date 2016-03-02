@@ -59,7 +59,8 @@ function avma_disable_wp ( $template) {
 add_action( 'admin_notices', 'avma_carefull_msg' );
 function avma_carefull_msg (){
 	$avma_admin_notice = avma_get_option ( 'avma_notif', 'general_tab' );
-	if ( $avma_admin_notice == 'on' ) {
+	$avma_admin_active = avma_get_option ( 'avma_active', 'general_tab' );
+	if ( $avma_admin_active == 'on' && $avma_admin_notice == 'on' ) {
 		?>
 	    <div class="updated">
 	        <p><?php _e( 'Coming Soon Plugin Was Activated', 'avla-maintenance' ); ?></p>
@@ -189,6 +190,7 @@ function avma_social( $input ) {
 	$avma_social_li = avma_get_option( 'avma_social_li', 'com_tab' );
 	$avma_social_dr = avma_get_option( 'avma_social_dr', 'com_tab' );
 	$avma_social_gi = avma_get_option( 'avma_social_gi', 'com_tab' );
+	$avma_so_color  = avma_get_option( 'avma_so_color' , 'com_tab' );
 		
 		switch ( $input ) {
 			case 'active':
@@ -196,66 +198,73 @@ function avma_social( $input ) {
 				break;
 			case 'facebook':
 				if ( !empty( $avma_social_fa ) ) { 
-					echo  "<div id='avma_fa'><a href= $avma_social_fa ><img src='' /></a></div>" ;
+					echo  "<li id='avma_fa' class='the-icons span3'><a class='demo-icon icon-facebook' href=$avma_social_fa>&#xe803;</a></li>" ;
 					break;
 				}else{
 					break;	
 				}	
 			case 'twitter':
 				if ( !empty( $avma_social_tw ) ) { 
-					echo "<div id='avma_tw'><a href= $avma_social_tw ><img src='' /></a></div>" ;
+					echo "<li id='avma_tw' class='the-icons span3'><a class='demo-icon icon-twitter' href=$avma_social_tw>&#xe802;</a></li>" ;
 					break;
 			    }else{
 			    	break;
 			    }
 			case 'instagram':
 				if 	( !empty( $avma_social_in ) ) { 
-					echo "<div id='avma_in'><a href= $avma_social_in><img src='' /></a></div>" ;
+					echo "<li id='avma_in' class='the-icons span3' ><a class='demo-icon icon-instagram' href= $avma_social_in>&#xe807;</a></li>" ;
 					break;
 			    }else{
 			    	break;
 			    }
 			case 'youtube':
 				if ( !empty( $avma_social_yo ) ) { 
-					echo "<div id='avma_yo'><a href= $avma_social_yo ><img src='' /></a></div>" ;
+					echo "<li id='avma_yo' class='the-icons span3' ><a class='demo-icon icon-youtube' href= $avma_social_yo >&#xe808;</a></li>" ;
 					break;
 			    }else{
 			    	break;
 			    }
 			case 'googleplus':
 				if ( !empty( $avma_social_g ) ) { 
-					echo "<div id='avma_g'><a href=$avma_social_g ><img src='' /></a></div>" ;
+					echo "<li id='avma_g' class='the-icons span3' ><a class='demo-icon icon-gplus' href=$avma_social_g >&#xe806;</a></li>" ;
 					break;	
 			    }else{
 			    	break;
 			    }
 			case 'pintrest':
 				if ( !empty( $avma_social_pi ) ) { 
-					echo "<div id='avma_pi'><a href= $avma_social_pi ><img src='' /></a></div> ";
+					echo "<li id='avma_pi' class='the-icons span3'><a class='demo-icon icon-pinterest' href=$avma_social_pi>&#xe801;</a></li>";
 					break;
 			    }else{
 			    	break;
 			    }
 			case 'linkedin':
 				if ( !empty( $avma_social_li ) ) { 
-					echo "<div id='avma_li'><a href= $avma_social_li><img src='' /></a></div>" ;
+					echo "<li id='avma_li' class='the-icons span3'><a class='demo-icon icon-linkedin' href= $avma_social_li>&#xe800;</a></li>" ;
 					break;
 			    }else{
 			    	break;
 			    }
 			case 'dribble':
 				if ( !empty ( $avma_social_dr ) ) { 
-					echo "<div id='avma_dr'><a href= $avma_social_dr ><img src='' /></a></div>" ;
+					echo "<li id='avma_dr' class='the-icons span3'><a class='demo-icon icon-dribbble' href= $avma_social_dr >&#xe804;</a></li>" ;
 					break;
 			    }else{
 			    	break;
 			    }
 			case 'github':
 				if ( !empty( $avma_social_gi ) ) { 
-					echo "<div id='avma_fa'><a href= $avma_social_gi'><img src='' /></a></div>" ;
+					echo "<li id='avma_fa' class='the-icons span3' ><a class='demo-icon icon-github' href= $avma_social_gi >&#xe805;</a></li>" ;
+					break;
+				}else{
+					break;
+				}	
+			case 'socolor':
+				if ( !empty( $avma_so_color ) ) { 
+					echo $avma_so_color ;
 					break;
 			    }else{
-			    	break;
+			    	echo "black";
 			    }
 
 			default:
