@@ -1,13 +1,13 @@
 <?php
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  *
  * */
-class Avma_Maintenance_Temp {
+class hdm_Maintenance_Temp {
 
-    protected $avma_slug;
+    protected $hdm_slug;
 	private static $instance;
 	protected $templates;
 
@@ -16,7 +16,7 @@ class Avma_Maintenance_Temp {
 	 */
 	public static function get_instance() {
 		if( null == self::$instance ) {
-			self::$instance = new Avma_Maintenance_Temp();
+			self::$instance = new hdm_Maintenance_Temp();
 		} 
 		return self::$instance;
 	} 
@@ -31,7 +31,7 @@ class Avma_Maintenance_Temp {
 		add_filter('template_include', array( $this, 'view_project_template') );
 				register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 				$this->templates = array(
-					'avma-template.php'     => __( 'Averta Coming Soon!', $this->avma_slug )
+					'hdm-template.php'     => __( 'Averta Coming Soon!', $this->hdm_slug )
 				);
 			$templates = wp_get_theme()->get_page_templates();
 			$templates = array_merge( $templates, $this->templates );
@@ -62,7 +62,7 @@ class Avma_Maintenance_Temp {
 			if ( ! isset( $this->templates[ get_post_meta( $post->ID, '_wp_page_template', true ) ] ) ) {
 				return $template;
 			}
-			$file = AVMA_DIR . 'templates/' . get_post_meta( $post->ID, '_wp_page_template', true );
+			$file = hdm_DIR . 'templates/' . get_post_meta( $post->ID, '_wp_page_template', true );
 			if( file_exists( $file ) ) {
 				return $file;
 			}
@@ -85,6 +85,6 @@ class Avma_Maintenance_Temp {
 	 * Retrieves and returns the slug of this plugin.
 	 */
 	public function get_locale() {
-		return $this->avma_slug;
+		return $this->hdm_slug;
 	} 
 }

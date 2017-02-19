@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  *
  * */
-class Avma_Maintenance_i18n {
+class hdm_Maintenance_i18n {
 
 
 	/**

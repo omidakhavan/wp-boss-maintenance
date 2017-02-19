@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  *
  */
 
-class Avma_Maintenance_Deactivator {
+class hdm_Maintenance_Deactivator {
 
 	/**
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
 		$a = get_option( 'general_tab' );
-		$a['avma_active'] = 'off' ;
+		$a['hdm_active'] = 'off' ;
 		update_option('general_tab',$a );
 
 	}

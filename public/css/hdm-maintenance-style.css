@@ -1,7 +1,7 @@
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  *
  * */
 @font-face {
@@ -24,26 +24,26 @@ body{
 	background-color: #ffffff;
 }
 
-#avma_content{
+#hdm_content{
 	background-color: #ebe9e9;
 	margin: 41px 41px 0 41px;
 	padding: 97px 0 0 0;
 }
 
-#avma_title{
+#hdm_title{
 	font-size: 27.54px;
 	font-family: 'Raleway', sans-serif;
 	padding: 70px 0 0 0;
 	color: #3d3d3d;
 }
 
-#avma_messages{
+#hdm_messages{
 	padding: 40px 0 0 0;
 	font-size: 16px;
 	font-family: 'Raleway',sans-serif;
 	color: #606060;
 }
-.avma_clearfix:after {
+.hdm_clearfix:after {
     clear: both;
     content: ".";
     display: block;
@@ -53,7 +53,7 @@ body{
 }
 
 /**counter*/
-#avma_counter{
+#hdm_counter{
 	padding: 100px 0 80px 0;
 
 }
@@ -97,21 +97,21 @@ ul#countdown  p.timeRefDays, ul#countdown  p.timeRefHours, ul#countdown  p.timeR
 }
 
 /**newsletter*/
-.avma_title_news{
+.hdm_title_news{
 	margin: 100px 0 0 0;
 	font-family: 'Raleway',sans-serif;
 	color: #3d3d3d;
 	font-size: 27.54px;
 }
 
-.avma_msg_news{
+.hdm_msg_news{
 	margin: 47px 0 0 0 ;
 	font-family: 'Raleway:600',sans-serif;
 	color: #828282;
 	font-size: 16px;
 }
 
-.avma_form_news{
+.hdm_form_news{
 	margin-top: 50px;
 }
 
@@ -128,17 +128,17 @@ ul#countdown  p.timeRefDays, ul#countdown  p.timeRefHours, ul#countdown  p.timeR
     margin-left: -130px;	
 }
 
-#avma_cntct_frm{
+#hdm_cntct_frm{
 	margin: 100px 0 0 0;
 }
 
-#avma_acontact_title{
+#hdm_acontact_title{
 	font-size: 27.54px;
 	font-family: 'Raleway:600',sans-serif;
 	color: #3d3d3d;
 }
 
-#avma_contact_form{
+#hdm_contact_form{
 	margin: 45px 0 0 0;
 }
 
@@ -151,7 +151,7 @@ input[type=text]{
 	font-size: 16px;
 }
 
-#avma_msg{
+#hdm_msg{
 	height:225px;
 	width:586px;
 	font-size: 16px;
@@ -174,7 +174,7 @@ input[type=submit]{
 
 }
 
-#avma_cpy{
+#hdm_cpy{
 	font-family: 'Raleway',sans-serif;
 	font-size: 14px;
 	bottom: 45px;

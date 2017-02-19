@@ -1,17 +1,17 @@
 <?php
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  *
  * */
 
-require_once AVMA_DIR . 'admin/includes/class-settings-api.php' ;
-class Avma_Settings {
+require_once hdm_DIR . 'admin/includes/hdm-maintenance-settings-api.php' ;
+class hdm_Settings {
 
     private $settings_api;
     function __construct() {
-        $this->settings_api = new Avma_Settings_API;
+        $this->settings_api = new hdm_Settings_API;
         add_action( 'admin_init', array($this, 'admin_init') );
         add_action( 'admin_menu', array($this, 'admin_menu') );
     }
@@ -23,7 +23,7 @@ class Avma_Settings {
         $this->settings_api->admin_init();
     }
     function admin_menu() {
-        add_menu_page( 'Maintenance Page Plugin ', 'Averta Maintenance', 'delete_posts', 'avma-maintenace', array($this, 'plugin_page'),'dashicons-welcome-view-site',79
+        add_menu_page( 'Maintenance Page Plugin ', 'Boss Maintenance', 'delete_posts', 'hdm-maintenace', array($this, 'plugin_page'),'dashicons-welcome-view-site',79
 );
     }
     function get_settings_sections() {
@@ -53,45 +53,45 @@ class Avma_Settings {
         $settings_fields = array(
             'general_tab' => array(
                 array(
-                    'name'              => 'avma_div',
-                    'label'             => __( '<span class="avma_divi" > Activation </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div',
+                    'label'             => __( '<span class="hdm_divi" > Activation </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),
                 array(
-                    'name'              => 'avma_active',
+                    'name'              => 'hdm_active',
                     'label'             => __( 'Plugin Activation', 'avla-maintenance' ),
                     'default'           => 'on',
                     'desc'              => __( 'Active / Deactive', 'avla-maintenance' ),
                     'type'              => 'checkbox'
                 ),
                 array(
-                    'name'              => 'avma_notif',
+                    'name'              => 'hdm_notif',
                     'label'             => __( 'Dashboard Notifaction', 'avla-maintenance' ),
                     'desc'              => __( 'Reminder notifaction message appear on dashboard', 'avla-maintenance' ),
                     'type'              => 'checkbox'
                 ),
                 array(
-                    'name'              => 'avma_redirect',
+                    'name'              => 'hdm_redirect',
                     'label'             => __( 'Redirect To :', 'avla-maintenance' ),
                     'desc'              => __( 'Redirect to costum page (for example http://example.com).', 'avla-maintenance' ),
                     'type'              => 'url',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_exclude',
+                    'name'              => 'hdm_exclude',
                     'label'             => __( 'Exclude', 'avla-maintenance' ),
                     'desc'              => __( 'Exclude Page From Maintenance Mode ( Seprate With Comma )', 'avla-maintenance' ),
                     'type'              => 'textarea'
                 ),
                 array(
-                    'name'              => 'avma_div01',
-                    'label'             => __( '<span class="avma_divi" > Counter </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div01',
+                    'label'             => __( '<span class="hdm_divi" > Counter </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),
                 array(
-                    'name'              => 'avma_count',
+                    'name'              => 'hdm_count',
                     'label'             => __( 'CountDown Activation', 'avla-maintenance' ),
                     'type'              => 'radio',
                     'options'           => array(
@@ -100,14 +100,14 @@ class Avma_Settings {
                                         )
                 ),
                 array(
-                    'name'              => 'avma_start_date',
+                    'name'              => 'hdm_start_date',
                     'label'             => __( 'Date', 'avla-maintenance' ),
                     'desc'              => __( 'Automatically disable maintenace mode at this date(mm/dd/yyyy 00:00:00)', 'avla-maintenance' ),
                     'type'              => 'datetime',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_counter_color',
+                    'name'              => 'hdm_counter_color',
                     'label'             => __( 'Counter Color', 'avla-maintenance' ),
                     'type'              => 'color',
                     'default'           => ''
@@ -115,33 +115,33 @@ class Avma_Settings {
             ),
             'design_tab' => array(
                 array(
-                    'name'              => 'avma_div02',
-                    'label'             => __( '<span class="avma_divi" > Logo </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div02',
+                    'label'             => __( '<span class="hdm_divi" > Logo </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),
                 array(
-                    'name'              => 'avma_logo',
+                    'name'              => 'hdm_logo',
                     'label'             => __( 'Logo', 'avla-maintenance' ),
                     'desc'              => __( 'Choose logo for your maintenace page', 'avla-maintenance' ),
                     'type'              => 'file',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_div03',
-                    'label'             => __( '<span class="avma_divi" > Messages </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div03',
+                    'label'             => __( '<span class="hdm_divi" > Messages </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),
                 array(
-                    'name'              => 'avma_page_title',
+                    'name'              => 'hdm_page_title',
                     'label'             => __( 'Page Title', 'avla-maintenance' ),
                     'desc'              => __( 'Title of page Notice : if empty will be show your defualt blog info.', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_content_title',
+                    'name'              => 'hdm_content_title',
                     'label'             => __( 'Message Title', 'avla-maintenance' ),
                     'desc'              => __( 'Title of message that you want to display on your maintenace page.', 'avla-maintenance' ),
                     'type'              => 'text',
@@ -155,26 +155,26 @@ class Avma_Settings {
                     'default'           => ''
                 ),             
                 array(
-                    'name'              => 'avma_describ',
+                    'name'              => 'hdm_describ',
                     'label'             => __( 'Maintenance Message', 'avla-maintenance' ),
                     'desc'              => __( '', 'avla-maintenance' ),
                     'type'              => 'wysiwyg'
                 ),
                 array(
-                    'name'              => 'avma_body_color',
+                    'name'              => 'hdm_body_color',
                     'label'             => __( 'Message Title Color', 'avla-maintenance' ),
                     'desc'              => __( 'Pick Message Color ', 'avla-maintenance' ),
                     'type'              => 'color',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_div04',
-                    'label'             => __( '<span class="avma_divi" > Background </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div04',
+                    'label'             => __( '<span class="hdm_divi" > Background </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),
                 array(
-                    'name'              => 'avma_bg_select',
+                    'name'              => 'hdm_bg_select',
                     'label'             => __( 'Choose Background Type', 'avla-maintenance' ),
                     'type'              => 'select',
                     'options'           => array(
@@ -184,14 +184,14 @@ class Avma_Settings {
                     )
                 ),
                 array(
-                    'name'              => 'avma_bg',
+                    'name'              => 'hdm_bg',
                     'label'             => __( 'Background Image', 'avla-maintenance' ),
                     'desc'              => __( 'Choose background image for maintenace page', 'avla-maintenance' ),
                     'type'              => 'file',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_bg_option',
+                    'name'              => 'hdm_bg_option',
                     'label'             => __( 'Background Image Style', 'avla-maintenance' ),
                     'type'              => 'radio',
                     'options'           => array(
@@ -204,41 +204,41 @@ class Avma_Settings {
                         )
                 ),
                 array(
-                    'name'              => 'avma_bg_color',
+                    'name'              => 'hdm_bg_color',
                     'label'             => __( 'Message Title Color', 'avla-maintenance' ),
                     'desc'              => __( 'Pick Message Color ', 'avla-maintenance' ),
                     'type'              => 'color',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_bg_video',
+                    'name'              => 'hdm_bg_video',
                     'label'             => __( 'Background Video', 'avla-maintenance' ),
                     'desc'              => __( 'Ogg', 'avla-maintenance' ),
                     'type'              => 'file',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_bg_webm',
+                    'name'              => 'hdm_bg_webm',
                     'label'             => __( 'Background Video', 'avla-maintenance' ),
                     'desc'              => __( 'WemM', 'avla-maintenance' ),
                     'type'              => 'file',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_bg_mp4',
+                    'name'              => 'hdm_bg_mp4',
                     'label'             => __( 'Background Video', 'avla-maintenance' ),
                     'desc'              => __( 'Mp4', 'avla-maintenance' ),
                     'type'              => 'file',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_div05',
-                    'label'             => __( '<span class="avma_divi" > Custom Style </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div05',
+                    'label'             => __( '<span class="hdm_divi" > Custom Style </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),               
                 array(
-                    'name'              => 'avma_style',
+                    'name'              => 'hdm_style',
                     'label'             => __( 'Costum Style', 'avla-maintenance' ),
                     'desc'              => __( 'Edit template style', 'avla-maintenance' ),
                     'type'              => 'textarea'
@@ -246,13 +246,13 @@ class Avma_Settings {
             ),    
             'com_tab' => array(
                 array(
-                    'name'              => 'avma_div06',
-                    'label'             => __( '<span class="avma_divi" > Contact Form </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div06',
+                    'label'             => __( '<span class="hdm_divi" > Contact Form </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),    
                 array(
-                    'name'              => 'avma_contact_active',
+                    'name'              => 'hdm_contact_active',
                     'label'             => __( 'Contact Form Activation', 'avla-maintenance' ),
                     'type'              => 'radio',
                     'options'           => array(
@@ -260,20 +260,20 @@ class Avma_Settings {
                             'Deactive'  => 'Deactive'
                 )),
                 array(
-                    'name'              => 'avma_contact_email',
+                    'name'              => 'hdm_contact_email',
                     'label'             => __( 'Admin E-mail', 'avla-maintenance' ),
                     'desc'              => __( 'Users message will be sent to this address.', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => $admin_email
                 ),
                 array(
-                    'name'              => 'avma_div07',
-                    'label'             => __( '<span class="avma_divi" > NewsLetter </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div07',
+                    'label'             => __( '<span class="hdm_divi" > NewsLetter </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),  
                 array(
-                    'name'              => 'avma_newsle_active',
+                    'name'              => 'hdm_newsle_active',
                     'label'             => __( 'NewsLetter Activation', 'avla-maintenance' ),
                     'type'              => 'radio',
                     'options'           => array(
@@ -281,7 +281,7 @@ class Avma_Settings {
                         'deactive'    => 'Deactive'
                 )),
                 array(
-                    'name'              => 'avma_news_select',
+                    'name'              => 'hdm_news_select',
                     'label'             => __( 'News Letter', 'avla-maintenance' ),
                     'desc'              => __( 'Select Mailing System.', 'avla-maintenance' ),
                     'type'              => 'select',
@@ -291,48 +291,48 @@ class Avma_Settings {
                     )
                 ),
                 array(
-                    'name'              => 'avma_chimp_api',
+                    'name'              => 'hdm_chimp_api',
                     'label'             => __( 'MailChimp Api', 'avla-maintenance' ),
                     'desc'              => __( 'Insert your mailchimp api key here.', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_chimp_list',
+                    'name'              => 'hdm_chimp_list',
                     'label'             => __( 'MailChimp List Id', 'avla-maintenance' ),
                     'desc'              => __( 'Insert your mailchimp id here ex(http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id).', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_sub_feed',
+                    'name'              => 'hdm_sub_feed',
                     'label'             => __( 'FeedBurner', 'avla-maintenance' ),
                     'desc'              => __( ' http://feeds2.feedburner.com/( only enter this part ).', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_sub_feed_btn',
+                    'name'              => 'hdm_sub_feed_btn',
                     'label'             => __( 'Subscriber Button', 'avla-maintenance' ),
                     'desc'              => __( 'Subscriber Button Text.', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => 'Notify Me!'
                 ),
                 array(
-                    'name'              => 'avma_sub_feed_txt',
+                    'name'              => 'hdm_sub_feed_txt',
                     'label'             => __( 'Subscriber Text', 'avla-maintenance' ),
                     'desc'              => __( 'Edit subscribtion placeholder.', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => 'Subscribe For Feed...'
                 ),
                 array(
-                    'name'              => 'avma_div08',
-                    'label'             => __( '<span class="avma_divi" > Social </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div08',
+                    'label'             => __( '<span class="hdm_divi" > Social </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ),  
                 array(
-                    'name'               => 'avma_social',
+                    'name'               => 'hdm_social',
                     'label'              => __( 'Social Networks', 'avla-maintenance' ),
                     'desc'               => __( 'Show your social networks link.', 'avla-maintenance' ),
                     'type'               => 'radio',
@@ -342,73 +342,73 @@ class Avma_Settings {
                     )
                 ),
                 array(
-                    'name'              => 'avma_so_color',
+                    'name'              => 'hdm_so_color',
                     'label'             => __( 'Color Of Social Icons', 'avla-maintenance' ),
                     'type'              => 'color',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_fa',
+                    'name'              => 'hdm_social_fa',
                     'label'             => __( 'Facebook', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_tw',
+                    'name'              => 'hdm_social_tw',
                     'label'             => __( 'Twitter', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_in',
+                    'name'              => 'hdm_social_in',
                     'label'             => __( 'Instagram', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_yo',
+                    'name'              => 'hdm_social_yo',
                     'label'             => __( 'You Tube', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_g',
+                    'name'              => 'hdm_social_g',
                     'label'             => __( 'Google +', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_pi',
+                    'name'              => 'hdm_social_pi',
                     'label'             => __( 'Pinterest', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_li',
+                    'name'              => 'hdm_social_li',
                     'label'             => __( 'Linked In', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_dr',
+                    'name'              => 'hdm_social_dr',
                     'label'             => __( 'Dribbble', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_social_gi',
+                    'name'              => 'hdm_social_gi',
                     'label'             => __( 'Github', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''
                 ),
                 array(
-                    'name'              => 'avma_div09',
-                    'label'             => __( '<span class="avma_divi" > Footer </span>', 'avla-maintenance' ),
+                    'name'              => 'hdm_div09',
+                    'label'             => __( '<span class="hdm_divi" > Footer </span>', 'avla-maintenance' ),
                     'desc'              => __( '<hr>', 'avla-maintenance' ),
                     'type'              => 'html'
                 ), 
                 array(
-                    'name'              => 'avma_footer',
+                    'name'              => 'hdm_footer',
                     'label'             => __( 'Footer Copyright', 'avla-maintenance' ),
                     'type'              => 'text',
                     'default'           => ''

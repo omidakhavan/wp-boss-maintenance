@@ -1,7 +1,7 @@
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  *
  * */
 
@@ -81,8 +81,8 @@
   }
   
   $(document).ready(function() {
-    var ctdown = { avma_ct : avma.avma_date};
-    var enddate = ctdown.avma_ct ;
+    var ctdown = { hdm_ct : hdm.hdm_date};
+    var enddate = ctdown.hdm_ct ;
     $("#countdown").countdown({
       date: enddate , 
       format: "off" 

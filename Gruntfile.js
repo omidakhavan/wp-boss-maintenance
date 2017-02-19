@@ -8,12 +8,12 @@ module.exports = function(grunt) {
             options: {
             },
             front_js: {
-                src: 'public/js/avma-maintenance-js.js',
-                dest: 'public/js/avma.min.js'
+                src: 'public/js/hdm-maintenance-js.js',
+                dest: 'public/js/hdm-maintenance.min.js'
             },
             admin_js: {
-                src: 'admin/js/avma-maintenance.js',
-                dest: 'admin/js/avma.min.js'
+                src: 'admin/js/hdm-maintenance.js',
+                dest: 'admin/js/hdm-maintenance.min.js'
             }
         },
 
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
               },
               target: {
                 files: {
-                  'public/css/style.min.css' : ['public/css/style.css' , 'public/css/animation.css']
+                  'public/css/hdm-maintenance.min.css' : ['public/css/hdm-maintenance-style.css' , 'public/css/hdm-maintenance-animation.css']
                 }
               }
             }

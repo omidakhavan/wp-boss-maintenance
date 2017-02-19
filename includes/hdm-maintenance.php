@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  */
 
-class Avma_Maintenance {
+class hdm_Maintenance {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -14,7 +14,7 @@ class Avma_Maintenance {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      averta-maintenance-loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      boss-maintenance-loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -42,7 +42,7 @@ class Avma_Maintenance {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'averta-maintenance';
+		$this->plugin_name = 'boss-maintenance';
 		$this->version = '1.0.0';
 		$this->load_dependencies();
 		$this->set_locale();
@@ -58,10 +58,10 @@ class Avma_Maintenance {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - avma-maintenance-loader. Orchestrates the hooks of the plugin.
-	 * - avma_maintenance_i18n. Defines internationalization functionality.
-	 * - avma_maintenance_Admin. Defines all hooks for the admin area.
-	 * - avma_Maintenance_Public. Defines all hooks for the public side of the site.
+	 * - hdm-maintenance-loader. Orchestrates the hooks of the plugin.
+	 * - hdm_maintenance_i18n. Defines internationalization functionality.
+	 * - hdm_maintenance_Admin. Defines all hooks for the admin area.
+	 * - hdm_Maintenance_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -75,41 +75,41 @@ class Avma_Maintenance {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once AVMA_DIR . 'includes/class-avma-maintenance-loader.php';
+		require_once hdm_DIR . 'includes/hdm-maintenance-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once AVMA_DIR . 'includes/class-avma-maintenance-i18n.php';
+		require_once hdm_DIR . 'includes/hdm-maintenance-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once AVMA_DIR . 'admin/class-avma-maintenance-admin.php';
+		require_once hdm_DIR . 'admin/hdm-maintenance-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once AVMA_DIR . 'public/class-avma-maintenance-public.php';
-		$this->loader = new Avma_Maintenance_loader();
+		require_once hdm_DIR . 'public/hdm-maintenance-public.php';
+		$this->loader = new hdm_Maintenance_loader();
 
 		/**
 		 * Call To Option Page Panel
 		 */
-		require_once AVMA_DIR .'admin/includes/class-avma-maintenance-setting.php';
-		new Avma_Settings ;		
+		require_once hdm_DIR .'admin/includes/hdm-maintenance-setting.php';
+		new hdm_Settings ;		
 		/**
 		 * Load Functions
 		 */
-		require_once AVMA_DIR .'admin/includes/avma-maintenance-functions.php';
+		require_once hdm_DIR .'admin/includes/hdm-maintenance-functions.php';
 		
 		/**
 		 * Load Exclude Costum Template In Specific Page
 		 */
-		require_once AVMA_DIR .'admin/includes/avma-maintenance-temp.php';
-		add_action( 'plugins_loaded', array( 'Avma_Maintenance_Temp', 'get_instance' ) );
+		require_once hdm_DIR .'admin/includes/hdm-maintenance-temp.php';
+		add_action( 'plugins_loaded', array( 'hdm_Maintenance_Temp', 'get_instance' ) );
 
 	}
 
@@ -120,7 +120,7 @@ class Avma_Maintenance {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Avma_Maintenance_i18n();
+		$plugin_i18n = new hdm_Maintenance_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -135,7 +135,7 @@ class Avma_Maintenance {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Avma_Maintenance_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new hdm_Maintenance_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -151,9 +151,9 @@ class Avma_Maintenance {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Avma_Maintenance_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new hdm_Maintenance_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'avma_head', $plugin_public, 'enqueue_styles' );
+		$this->loader->add_action( 'hdm_head', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
@@ -182,7 +182,7 @@ class Avma_Maintenance {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    averta-maintenance-loader    Orchestrates the hooks of the plugin.
+	 * @return    boss-maintenance-loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

@@ -1,12 +1,12 @@
 <?php
 /**
- * @link              http://averta.net
+ * @link              http://omidakhavan.ir
  * @since             1.0.0
- * @package           averta-maintenance
+ * @package           boss-maintenance
  *
  *
  */
-class Avma_Settings_Api {
+class hdm_Settings_Api {
     /**
      * settings sections array
      *
@@ -31,11 +31,11 @@ class Avma_Settings_Api {
         wp_enqueue_media();
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_script( 'jquery' );
-        wp_register_style('avma_js_time_style' , AVMA_URL. '/admin/css/jquery-ui-timepicker-addon.css');
-        wp_enqueue_style( 'avma_js_time_style' );   
+        wp_register_style('hdm_js_time_style' , hdm_URL. '/admin/css/jquery-ui-timepicker-addon.css');
+        wp_enqueue_style( 'hdm_js_time_style' );   
         wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
         wp_enqueue_script( 'jquery-script', 'http://code.jquery.com/ui/1.10.4/jquery-ui.js');
-        wp_enqueue_script( 'jquery-time-picker' ,  AVMA_URL. '/admin/js/jquery-ui-timepicker-addon.js',  array( 'jquery' ) );    
+        wp_enqueue_script( 'jquery-time-picker' ,  hdm_URL. '/admin/js/jquery-ui-timepicker-addon.js',  array( 'jquery' ) );    
     }
     /**
      * Set settings sections
