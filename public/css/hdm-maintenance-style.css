@@ -30,12 +30,7 @@ body{
 	padding: 97px 0 0 0;
 }
 
-#hdm_title{
-	font-size: 27.54px;
-	font-family: 'Raleway', sans-serif;
-	padding: 70px 0 0 0;
-	color: #3d3d3d;
-}
+
 
 #hdm_messages{
 	padding: 40px 0 0 0;
@@ -43,14 +38,7 @@ body{
 	font-family: 'Raleway',sans-serif;
 	color: #606060;
 }
-.hdm_clearfix:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    line-height: 0;
-    visibility: hidden;
-}
+
 
 /**counter*/
 #hdm_counter{

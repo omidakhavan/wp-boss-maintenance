@@ -47,7 +47,7 @@ class hdm_Maintenance_Public {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, hdm_URL.'/public/js/hdm-maintenance.min.js', array( 'jquery' ), $this->version, false );
+
 		
 	}
 

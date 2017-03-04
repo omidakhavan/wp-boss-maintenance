@@ -33,19 +33,28 @@ function hdm_get_option( $option, $section, $default = '' ) {
  * Redirect function
  */
 add_action( 'template_redirect', 'hdm_disable_wp', 9 );
-function hdm_disable_wp ( $template) {
+function hdm_disable_wp ( $template ) {
+
     $hdm_custom_redirect = hdm_get_option ( 'hdm_redirect', 'general_tab' );
+
 	$hdm_activation      = hdm_get_option ( 'hdm_active', 'general_tab'   );
-	$hdm_exclude         = hdm_get_option ( 'hdm_exclude', 'general_tab'  );
-	$hdm_result_exclude  = explode( '|', $hdm_exclude );
+
 	if  ( $hdm_activation == 'on' &&  $hdm_custom_redirect != "" ) {
-            if( !is_admin() && !is_super_admin() && !preg_match("/login|admin|$hdm_result_exclude|dashboard|account/i",$_SERVER['REQUEST_URI']) > 0){
-            	wp_redirect( $hdm_custom_redirect  ) ;
-			}
+
+		if( !is_admin() && !is_super_admin() && !preg_match("/login|admin|dashboard|account/i",$_SERVER['REQUEST_URI']) > 0){
+
+			wp_redirect( $hdm_custom_redirect  ) ;
+
+		}
+
     } elseif ( $hdm_activation == 'on' &&  $hdm_custom_redirect == "" ) {
-        if( !is_admin() && !is_super_admin() && !preg_match("/login|admin|dashboard|$hdm_result_exclude|account/i",$_SERVER['REQUEST_URI']) > 0){
+
+        if( !is_admin() && !is_super_admin() && !preg_match("/wp-login|wp-admin|dashboard|account/i",$_SERVER['REQUEST_URI']) > 0) {
+
           	apply_filters( 'hdm_change_temp', $redirect_url =  hdm_DIR . 'templates/hdm-template.php' );
+
 			include( $redirect_url );
+
 			exit();
 
         }
@@ -63,35 +72,27 @@ function hdm_carefull_msg (){
 	if ( $hdm_admin_active == 'on' && $hdm_admin_notice == 'on' ) {
 		?>
 	    <div class="updated">
-	        <p><?php _e( 'Coming Soon Plugin Was Activated', 'avla-maintenance' ); ?></p>
+	        <p><?php _e( 'Your site is under maintenance and only admin can view pages.', 'bsscommingsoon' ); ?></p>
 	    </div>
 	    <?php
 	}
 }
 
-/**
- * Register Script And Enqueue Script Again For Loclize
- */
-add_action( 'wp_enqueue_scripts', 'hdm_scripts' ) ;
-function hdm_scripts () {
-	wp_enqueue_script( 'hdm_script_js', hdm_URL.'/public/js/hdm-maintenance-js.js', array( 'jquery' ), '1.0.0' , true ); 
-    $hdm_count_date = hdm_get_option ( 'hdm_start_date', 'general_tab' );
-	wp_localize_script( 'hdm_script_js', 'hdm' , $json = 
-		array(
-		'hdm_date' => $hdm_count_date
-		));
-}
 
 /**
  * Page Title 
  */
-add_action( 'hdm_frm', 'hdm_page_title' );
 function hdm_page_title () {
 	$hdm_page_title = hdm_get_option ( 'hdm_page_title' , 'design_tab' );
+
 	if ( !empty( $hdm_page_title ) ) {
-	 return $hdm_page_title ;	
-	 }else{
-	 return $hdm_page_title = get_bloginfo();
+
+		return $hdm_page_title ;
+
+	} else {
+
+		return $hdm_page_title = get_bloginfo();
+		
 	}		
 }
 
@@ -107,14 +108,14 @@ function hdm_cntct_frm() {
 		// validate name field
 		if ( !preg_match('/^[a-zA-Z ]*$/', $name) ) {
 			$name = "";
-			$hdm_error['name'] = _e( 'Please enter valid name', 'avla-maintenance' );	
+			$hdm_error['name'] = _e( 'Please enter valid name', 'bsscommingsoon' );	
 			return $hdm_error ;						
 		}
 		$mail = trim( $_POST [ 'mail' ] );
 		//validate mail field
 		if ( !filter_var( $mail, FILTER_VALIDATE_EMAIL ) ) {
 			$mail = "" ;
-			$hdm_error ['mail'] = _e( 'Please enter valid email address', 'avla-maintenance' );
+			$hdm_error ['mail'] = _e( 'Please enter valid email address', 'bsscommingsoon' );
 			return $hdm_error ;
 		}
 		$GLOBALS['$name'] ;
@@ -122,12 +123,12 @@ function hdm_cntct_frm() {
 		$msg  = trim( $_POST [ 'msg' ] );
 		//success
 		if ( empty( $hdm_error ) ) { 
-			$form_content = __( "User Mail : $mail \n User Message: $msg", 'avla-maintenance' );
+			$form_content = __( "User Mail : $mail \n User Message: $msg", 'bsscommingsoon' );
 			$hdm_admin_mail = hdm_get_option ( 'hdm_contact_email', 'com_tab' );
-			$subject = __( 'Maintenace Message', 'avla-maintenance' );
+			$subject = __( 'Maintenace Message', 'bsscommingsoon' );
 			wp_mail( $hdm_admin_mail, $subject, $form_content ) ;
 			echo '<span id="hdm_suc">' ;
-			 _e( 'Your message was successfuly sent!', 'avla-maintenance' );
+			 _e( 'Your message was successfuly sent!', 'bsscommingsoon' );
 			 echo  '</span> ' ;
 	    }else{
 	    	return $hdm_error ;
@@ -303,7 +304,7 @@ function chim_msg() {
 	if ( !empty( $_POST[ 'mail_chimp' ] ) ) {  
 		if ( is_null( $last_error ) ) {
 			echo '<div id="chimp_suc">' ;
-			_e( 'Successfuly Subscribed', 'avla-maintenance' );
+			_e( 'Successfuly Subscribed', 'bsscommingsoon' );
 			echo '</div>';
 		}else{
 			 echo '<div id="chimp_error" >' . $last_error . '</div>' ;
@@ -323,14 +324,14 @@ function hdm_maintenace_help( $contextual_help, $screen_id) {
             get_current_screen()->add_help_tab( array(
             'id'        => 'hdm_general',
             'title'     => __( 'First view' ),
-            'content'   => __( '<P>'.'<strong>'.'Active Plugin'.'<strong/>'.'<p>'.'When you triggered Maintenance to active,There are three way in front of you First, you can check the active and your site will be directed to custom template Secondly, will happen when you have custom link and fill the special place that embedded Thirdly, when you want to take special page to coming soon just go to your specific page and on the right hand combo box select averta maintenace template.'.'<P>'.'<strong>'.'Counter'.'<strong/>'.'<p>'. 'When you active plugin you can choose template with counter or without any counter demonstration the time calculation its matching with you local time but date will be calculate from js date function and has not any relation with you local date.'.'<P>'.'<strong>'.'Template Background'.'<strong/>'.'<p>'.'You whatever you want can change your style the one of the customazation section is change your template background color or set image for your background please keep in your mind that background image priority higher than background color.','avla-maintenance' )
+            'content'   => __( '<P>'.'<strong>'.'Active Plugin'.'<strong/>'.'<p>'.'When you triggered Maintenance to active,There are three way in front of you First, you can check the active and your site will be directed to custom template Secondly, will happen when you have custom link and fill the special place that embedded Thirdly, when you want to take special page to coming soon just go to your specific page and on the right hand combo box select averta maintenace template.'.'<P>'.'<strong>'.'Counter'.'<strong/>'.'<p>'. 'When you active plugin you can choose template with counter or without any counter demonstration the time calculation its matching with you local time but date will be calculate from js date function and has not any relation with you local date.'.'<P>'.'<strong>'.'Template Background'.'<strong/>'.'<p>'.'You whatever you want can change your style the one of the customazation section is change your template background color or set image for your background please keep in your mind that background image priority higher than background color.','bsscommingsoon' )
 
             ) );
 
             get_current_screen()->add_help_tab( array(
             'id'        => 'hdm_dev',
             'title'     => __( 'Developer' ),
-            'content'   => __( 'As intrested user you can check this out <a href="http://omidakhavan.ir" > Averta </a>', 'avla-maintenance' )
+            'content'   => __( 'As intrested user you can check this out <a href="http://omidakhavan.ir" > Averta </a>', 'bsscommingsoon' )
             ) );
             break;
     }
