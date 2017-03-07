@@ -181,97 +181,97 @@ $hdm_bg = hdm_get_option ( 'hdm_bg' , 'design_tab' );
  * @return [type]        [description]
  */
 function hdm_social( $input ) { 
-	$hdm_social    = hdm_get_option( 'hdm_social'   , 'com_tab' );
-	$hdm_social_fa = hdm_get_option( 'hdm_social_fa', 'com_tab' );
-	$hdm_social_tw = hdm_get_option( 'hdm_social_tw', 'com_tab' );
-	$hdm_social_in = hdm_get_option( 'hdm_social_in', 'com_tab' );
-	$hdm_social_yo = hdm_get_option( 'hdm_social_yo', 'com_tab' );
-	$hdm_social_g  = hdm_get_option( 'hdm_social_g' , 'com_tab' );
-	$hdm_social_pi = hdm_get_option( 'hdm_social_pi', 'com_tab' );
-	$hdm_social_li = hdm_get_option( 'hdm_social_li', 'com_tab' );
-	$hdm_social_dr = hdm_get_option( 'hdm_social_dr', 'com_tab' );
-	$hdm_social_gi = hdm_get_option( 'hdm_social_gi', 'com_tab' );
-	$hdm_so_color  = hdm_get_option( 'hdm_so_color' , 'com_tab' );
 		
-		switch ( $input ) {
-			case 'active':
-				return $hdm_social ;
+	switch ( $input ) {
+		case 'active':
+			$hdm_social    = hdm_get_option( 'hdm_social'   , 'com_tab' );
+			return $hdm_social ;
+			break;
+		case 'facebook':
+			$hdm_social_fa = hdm_get_option( 'hdm_social_fa', 'com_tab' );
+			if ( !empty( $hdm_social_fa ) ) { 
+				echo  "<li id='hdm_fa' class='the-icons span3'><a class='demo-icon icon-facebook' href=$hdm_social_fa>&#xe803;</a></li>" ;
 				break;
-			case 'facebook':
-				if ( !empty( $hdm_social_fa ) ) { 
-					echo  "<li id='hdm_fa' class='the-icons span3'><a class='demo-icon icon-facebook' href=$hdm_social_fa>&#xe803;</a></li>" ;
-					break;
-				}else{
-					break;	
-				}	
-			case 'twitter':
-				if ( !empty( $hdm_social_tw ) ) { 
-					echo "<li id='hdm_tw' class='the-icons span3'><a class='demo-icon icon-twitter' href=$hdm_social_tw>&#xe802;</a></li>" ;
-					break;
-			    }else{
-			    	break;
-			    }
-			case 'instagram':
-				if 	( !empty( $hdm_social_in ) ) { 
-					echo "<li id='hdm_in' class='the-icons span3' ><a class='demo-icon icon-instagram' href= $hdm_social_in>&#xe807;</a></li>" ;
-					break;
-			    }else{
-			    	break;
-			    }
-			case 'youtube':
-				if ( !empty( $hdm_social_yo ) ) { 
-					echo "<li id='hdm_yo' class='the-icons span3' ><a class='demo-icon icon-youtube' href= $hdm_social_yo >&#xe808;</a></li>" ;
-					break;
-			    }else{
-			    	break;
-			    }
-			case 'googleplus':
-				if ( !empty( $hdm_social_g ) ) { 
-					echo "<li id='hdm_g' class='the-icons span3' ><a class='demo-icon icon-gplus' href=$hdm_social_g >&#xe806;</a></li>" ;
-					break;	
-			    }else{
-			    	break;
-			    }
-			case 'pintrest':
-				if ( !empty( $hdm_social_pi ) ) { 
-					echo "<li id='hdm_pi' class='the-icons span3'><a class='demo-icon icon-pinterest' href=$hdm_social_pi>&#xe801;</a></li>";
-					break;
-			    }else{
-			    	break;
-			    }
-			case 'linkedin':
-				if ( !empty( $hdm_social_li ) ) { 
-					echo "<li id='hdm_li' class='the-icons span3'><a class='demo-icon icon-linkedin' href= $hdm_social_li>&#xe800;</a></li>" ;
-					break;
-			    }else{
-			    	break;
-			    }
-			case 'dribble':
-				if ( !empty ( $hdm_social_dr ) ) { 
-					echo "<li id='hdm_dr' class='the-icons span3'><a class='demo-icon icon-dribbble' href= $hdm_social_dr >&#xe804;</a></li>" ;
-					break;
-			    }else{
-			    	break;
-			    }
-			case 'github':
-				if ( !empty( $hdm_social_gi ) ) { 
-					echo "<li id='hdm_fa' class='the-icons span3' ><a class='demo-icon icon-github' href= $hdm_social_gi >&#xe805;</a></li>" ;
-					break;
-				}else{
-					break;
-				}	
-			case 'socolor':
-				if ( !empty( $hdm_so_color ) ) { 
-					echo $hdm_so_color ;
-					break;
-			    }else{
-			    	echo "black";
-			    }
-
-			default:
-
+			}else{
+				break;	
+			}	
+		case 'twitter':
+			$hdm_social_tw = hdm_get_option( 'hdm_social_tw', 'com_tab' );
+			if ( !empty( $hdm_social_tw ) ) { 
+				echo "<li id='hdm_tw' class='the-icons span3'><a class='demo-icon icon-twitter' href=$hdm_social_tw>&#xe802;</a></li>" ;
 				break;
-		}	
+			}else{
+		    	break;
+		}
+		case 'instagram':
+			$hdm_social_in = hdm_get_option( 'hdm_social_in', 'com_tab' );
+			if 	( !empty( $hdm_social_in ) ) { 
+				echo "<li id='hdm_in' class='the-icons span3' ><a class='demo-icon icon-instagram' href= $hdm_social_in>&#xe807;</a></li>" ;
+				break;
+			}else{
+		    	break;
+		    }
+		case 'youtube':
+			$hdm_social_yo = hdm_get_option( 'hdm_social_yo', 'com_tab' );
+			if ( !empty( $hdm_social_yo ) ) { 
+				echo "<li id='hdm_yo' class='the-icons span3' ><a class='demo-icon icon-youtube' href= $hdm_social_yo >&#xe808;</a></li>" ;
+				break;
+		    }else{
+		    	break;
+		    }
+		case 'googleplus':
+			$hdm_social_g  = hdm_get_option( 'hdm_social_g' , 'com_tab' );
+			if ( !empty( $hdm_social_g ) ) { 
+				echo "<li id='hdm_g' class='the-icons span3' ><a class='demo-icon icon-gplus' href=$hdm_social_g >&#xe806;</a></li>" ;
+				break;	
+		    }else{
+		    	break;
+		    }
+		case 'pintrest':
+			$hdm_social_pi = hdm_get_option( 'hdm_social_pi', 'com_tab' );
+			if ( !empty( $hdm_social_pi ) ) { 
+				echo "<li id='hdm_pi' class='the-icons span3'><a class='demo-icon icon-pinterest' href=$hdm_social_pi>&#xe801;</a></li>";
+				break;
+		    }else{
+		    	break;
+		    }
+		case 'linkedin':
+			$hdm_social_li = hdm_get_option( 'hdm_social_li', 'com_tab' );
+			if ( !empty( $hdm_social_li ) ) { 
+				echo "<li id='hdm_li' class='the-icons span3'><a class='demo-icon icon-linkedin' href= $hdm_social_li>&#xe800;</a></li>" ;
+				break;
+		    }else{
+		    	break;
+		    }
+		case 'dribble':
+			$hdm_social_dr = hdm_get_option( 'hdm_social_dr', 'com_tab' );
+			if ( !empty ( $hdm_social_dr ) ) { 
+				echo "<li id='hdm_dr' class='the-icons span3'><a class='demo-icon icon-dribbble' href= $hdm_social_dr >&#xe804;</a></li>" ;
+				break;
+		    }else{
+		    	break;
+		    }
+		case 'github':
+			$hdm_social_gi = hdm_get_option( 'hdm_social_gi', 'com_tab' );
+			if ( !empty( $hdm_social_gi ) ) { 
+				echo "<li id='hdm_fa' class='the-icons span3' ><a class='demo-icon icon-github' href= $hdm_social_gi >&#xe805;</a></li>" ;
+				break;
+			}else{
+				break;
+			}	
+		case 'socolor':
+			$hdm_so_color  = hdm_get_option( 'hdm_so_color' , 'com_tab' );
+			if ( !empty( $hdm_so_color ) ) { 
+				echo $hdm_so_color ;
+				break;
+		    }else{
+		    	echo "black";
+		    }
+
+		default:
+
+			break;
+	}	
 }
 
 /**

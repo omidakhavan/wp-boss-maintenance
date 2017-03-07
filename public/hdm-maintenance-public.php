@@ -36,7 +36,7 @@ class hdm_Maintenance_Public {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, hdm_URL.'/public/css/hdm-maintenance.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, hdm_URL.'/public/css/hdm-maintenance-style.css', array(), $this->version, 'all' );
 
 	}
 

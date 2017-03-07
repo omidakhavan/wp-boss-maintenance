@@ -24,20 +24,6 @@ body{
 	background-color: #ffffff;
 }
 
-#hdm_content{
-	background-color: #ebe9e9;
-	margin: 41px 41px 0 41px;
-	padding: 97px 0 0 0;
-}
-
-
-
-#hdm_messages{
-	padding: 40px 0 0 0;
-	font-size: 16px;
-	font-family: 'Raleway',sans-serif;
-	color: #606060;
-}
 
 
 /**counter*/
@@ -82,92 +68,6 @@ ul#countdown  p.timeRefDays, ul#countdown  p.timeRefHours, ul#countdown  p.timeR
 	letter-spacing: 0;
 	margin: 0;
 	padding-bottom: 5px;
-}
-
-/**newsletter*/
-.hdm_title_news{
-	margin: 100px 0 0 0;
-	font-family: 'Raleway',sans-serif;
-	color: #3d3d3d;
-	font-size: 27.54px;
-}
-
-.hdm_msg_news{
-	margin: 47px 0 0 0 ;
-	font-family: 'Raleway:600',sans-serif;
-	color: #828282;
-	font-size: 16px;
-}
-
-.hdm_form_news{
-	margin-top: 50px;
-}
-
-.notify_btn{
-    background-color: transparent;
-    background-repeat:no-repeat;
-	font-family: 'Raleway:600',sans-serif;
-	font-size: 13px;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    padding-right: 25px;
-    margin-left: -130px;	
-}
-
-#hdm_cntct_frm{
-	margin: 100px 0 0 0;
-}
-
-#hdm_acontact_title{
-	font-size: 27.54px;
-	font-family: 'Raleway:600',sans-serif;
-	color: #3d3d3d;
-}
-
-#hdm_contact_form{
-	margin: 45px 0 0 0;
-}
-
-input[type=text]{
-	padding: 0 0 0 24px;
-	font-family: 'Raleway:400italic',sans-serif;
-	border-color: 1px solid #bbbbbb;
-	width: 586px;
-	height: 55px;
-	font-size: 16px;
-}
-
-#hdm_msg{
-	height:225px;
-	width:586px;
-	font-size: 16px;
-	padding:20px 0 0 24px;
-	font-family: 'Raleway:400italic',sans-serif;
-	border-color: 1px solid #bbbbbb;
-	position: relative;
-}	
-
-input[type=submit]{
-	margin-top: -21px;
-	background-color: #3d3d3d;
-	color: #ffffff;
-	width: 615px;
-	height: 53px;
-	font-size: 13px;
-	font-family: 'Raleway:600',sans-serif;
-	position: relative;
-	padding: 20px  250px 22px 250px;
-
-}
-
-#hdm_cpy{
-	font-family: 'Raleway',sans-serif;
-	font-size: 14px;
-	bottom: 45px;
-	width: 100%;
-	position: absolute;
 }
 
 /**video background started here*/
@@ -238,19 +138,4 @@ video#bgvid {
 }
 .i-code {
   display: none;
-}
-
-#footer ul{
-	list-style-type: none;
-	white-space:nowrap;
-	bottom: 90px;
-    width: 100%;
-	position: absolute;
-	padding-left: 0px;
-}
-
-#footer ul li{
-	display: inline-block;
-	position: relative;
-	color: white ;
 }

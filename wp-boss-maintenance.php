@@ -63,12 +63,3 @@ function run_hdm_maintenance() {
 
 }
 run_hdm_maintenance();
-
-
-add_action( 'activated_plugin', 'save_error_wpse_24278', 10, 2 );
-
-function save_error_wpse_24278( $plugin, $network_wide )
-{
-
-    update_option( 'plugin_error',  ob_get_contents() );
-}
