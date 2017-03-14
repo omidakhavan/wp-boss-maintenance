@@ -139,11 +139,11 @@ hdm_template_script();
 			<div class="hdm_newsletter">
 
 					<div class="hdm_title_news">
-						<span><?php _e( 'Subscribtion','bsscommingsoon' ); ?></span>
+						<h4><?php _e( 'Subscribtion','bsscommingsoon' ); ?></h4>
 					</div>
 
 					<div class="hdm_msg_news">
-						<span><?php _e( 'Subscribe for our feeds','bsscommingsoon' ); ?></span>
+						<p><?php _e( 'Subscribe for our feeds','bsscommingsoon' ); ?></p>
 					</div>
 
 					<form class="hdm_form_news" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo hdm_feedburner( 'link' ) ; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">

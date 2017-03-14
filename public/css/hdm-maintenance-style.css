@@ -1,106 +1,101 @@
 /**
- * @link              http://omidakhavan.ir
- * @since             1.0.0
- * @package           boss-maintenance
- *
- * */
+* @link              http://omidakhavan.ir
+* @since             1.0.0
+* @package           boss-maintenance
+*
+* */
 @font-face {
   font-family: 'fontello';
   src: url('.././font/fontello.eot?48179047');
   src: url('.././font/fontello.eot?48179047#iefix') format('embedded-opentype'),
-       url('.././font/fontello.woff?48179047') format('woff'),
-       url('.././font/fontello.ttf?48179047') format('truetype'),
-       url('.././font/fontello.svg?48179047#fontello') format('svg');
+  url('.././font/fontello.woff?48179047') format('woff'),
+  url('.././font/fontello.ttf?48179047') format('truetype'),
+  url('.././font/fontello.svg?48179047#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-     
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:600,700,300,400,400italic,500);
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @import url(https://fonts.googleapis.com/css?family=Lato:900);
 
 body{
-	text-align: center;
-	background-color: #ffffff;
+  text-align: center;
+  background-color: #ffffff;
 }
 
-
-
-/**counter*/
-#hdm_counter{
-	padding: 100px 0 80px 0;
-
-}
 @media only screen and (max-width: 480px) {
-	ul#countdown li{
-		padding-left: 0px;
-	}	
+  ul#countdown li{
+    padding-left: 0px;
+  } 
 }
 
 @media only screen and (min-width: 598px) and (max-width: 758px){
-	ul#countdown li{
-		padding-left: 30px;
-	}	
+  ul#countdown li{
+    padding-left: 30px;
+  } 
 }
 @media only screen and (min-width: 599px){
-	ul#countdown li{
-		margin: auto;
-		width: 20%;
-	}	
+  ul#countdown li{
+    margin: auto;
+    width: 20%;
+  } 
 }
 ul#countdown li{
-	color: #3d3d3d;
-	display: inline;
-	float: left;
-	font-family: 'Lato', sans-serif;
-	font-size: 74px;
-	letter-spacing: 5px;
-	text-align: center;
-	
+  color: #3d3d3d;
+  display: inline;
+  float: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 74px;
+  letter-spacing: 5px;
+  text-align: center;
+
 }
 
 ul#countdown p {
-	font-family: 'Lato', sans-serif;
-	font-size: 13px;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
 }
 ul#countdown  p.timeRefDays, ul#countdown  p.timeRefHours, ul#countdown  p.timeRefMinutes, ul#countdown  p.timeRefSeconds{
-	font: 'Raleway:600',sans-serif;
-	letter-spacing: 0;
-	margin: 0;
-	padding-bottom: 5px;
+  font: 'Raleway:600',sans-serif;
+  letter-spacing: 0;
+  margin: 0;
+  padding-bottom: 5px;
 }
 
 /**video background started here*/
 video#bgvid { 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
-    background-size: cover; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(polina.jpg) no-repeat;
+  background-size: cover; 
 }
 
 @media screen and (max-device-width: 800px) {
-    html {
-         background: url(polina.jpg) #000 no-repeat center center fixed;
-    }
-    #bgvid {
-        display: none;
-    }
+  html {
+    background: url(polina.jpg) #000 no-repeat center center fixed;
+  }
+  #bgvid {
+    display: none;
+  }
 }
 
 video#bgvid {
-    transition: 1s opacity;
+  transition: 1s opacity;
 }
-.stopfade { opacity: .5; }
+.stopfade {
+  opacity: .5;
+}
 
 /** fontello icons css from here*/
 .the-icons {
@@ -111,13 +106,12 @@ video#bgvid {
   width: 20px;
 }
 
-.demo-icon
-{
+.demo-icon {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -130,12 +124,49 @@ video#bgvid {
   margin-left: .2em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 .codesOn .i-code {
-	display: inline;
+  display: inline;
 }
 .i-code {
   display: none;
 }
+
+/* Logo */
+.hdm-content #hdm_logo { padding: 100px 50px 70px; }
+
+/* Title */
+.hdm-content .htm-measage-title { text-transform: uppercase; position: relative; font-family: 'Montserrat', sans-serif; }
+.hdm-content .htm-measage-title:after { content: ""; position: absolute; width: 70px; height: 3px; background: #000; bottom: -27px; left: 50%; transform: translate(-50%,0); }
+
+/* content */
+.hdm-content .hdm-message-article { padding-top: 30px; font-size: 20px; font-family: 'Montserrat', sans-serif; }
+
+/* Countdown */
+.hdm-content #hdm_counter { overflow: hidden; display: inline-block; text-align: center; }
+.hdm-content #hdm_counter #countdown {overflow: hidden;padding-left: 0;margin: 60px 0;}
+.hdm-content #hdm_counter #countdown li {margin: 0 5px;padding: 10px;width: 100px;background: #ffffff;color: #000;}
+
+.hdm-content #mail_chimp, .hdm-content #notify_txt {padding: 10px 200px 10px 12px;background: transparent;border: none;border-bottom: 1px solid #fff;}
+.hdm-content #mail_chimp:focus, .hdm-content #notify_txt:focus {outline: none;}
+.hdm-content .notify_btn {background: transparent;border: 1px solid #fff;padding: 10px 31px;font-size: 13px;}
+
+.hdm-content #mail_chimp::-webkit-input-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+.hdm-content #mail_chimp::-moz-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+.hdm-content #mail_chimp:-ms-input-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+.hdm-content #mail_chimp:-moz-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+
+.hdm-content #notify_txt::-webkit-input-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+.hdm-content #notify_txt::-moz-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+.hdm-content #notify_txt:-ms-input-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+.hdm-content #notify_txt:-moz-placeholder { color: #fff; font-family: 'Montserrat', sans-serif; }
+
+/* Socials */
+.hdm-content #hdm_social { padding: 0;}
+.hdm-content #hdm_social li a, #hdm_social, #hdm_social li { display: inline-block; text-align: center;}
+.hdm-content #hdm_social li { margin: 0 10px; width: 35px; height: 35px; border: 1px solid; border-radius: 50%; transition: all .3s ease; -webkit-transition: all .3s ease; }
+.hdm-content #hdm_social li a i { font-size: 20px; font-style: normal; }
+.hdm-content #hdm_social li a { padding-top: 10px; padding-right: 4px; }
+.hdm-content #hdm_social li a.icon-facebook { padding-top: 10px; padding-right: 0px; }
+.hdm-content #hdm_social li:hover {box-shadow: 0px 0px 0px 16px #fff inset;}

@@ -66,9 +66,11 @@ function hdm_disable_wp ( $template ) {
  * Admin Notice Message
  */
 add_action( 'admin_notices', 'hdm_carefull_msg' );
-function hdm_carefull_msg (){
+function hdm_carefull_msg () {
+
 	$hdm_admin_notice = hdm_get_option ( 'hdm_notif', 'general_tab' );
 	$hdm_admin_active = hdm_get_option ( 'hdm_active', 'general_tab' );
+	
 	if ( $hdm_admin_active == 'on' && $hdm_admin_notice == 'on' ) {
 		?>
 	    <div class="updated">
@@ -83,6 +85,7 @@ function hdm_carefull_msg (){
  * Page Title 
  */
 function hdm_page_title () {
+
 	$hdm_page_title = hdm_get_option ( 'hdm_page_title' , 'design_tab' );
 
 	if ( !empty( $hdm_page_title ) ) {
@@ -190,7 +193,7 @@ function hdm_social( $input ) {
 		case 'facebook':
 			$hdm_social_fa = hdm_get_option( 'hdm_social_fa', 'com_tab' );
 			if ( !empty( $hdm_social_fa ) ) { 
-				echo  "<li id='hdm_fa' class='the-icons span3'><a class='demo-icon icon-facebook' href=$hdm_social_fa>&#xe803;</a></li>" ;
+				echo  "<li id='hdm_fa' class='the-icons span3' data-social='facebook'><a class='demo-icon icon-facebook' href=$hdm_social_fa><i>&#xe803;</i></a></li>" ;
 				break;
 			}else{
 				break;	
@@ -198,7 +201,7 @@ function hdm_social( $input ) {
 		case 'twitter':
 			$hdm_social_tw = hdm_get_option( 'hdm_social_tw', 'com_tab' );
 			if ( !empty( $hdm_social_tw ) ) { 
-				echo "<li id='hdm_tw' class='the-icons span3'><a class='demo-icon icon-twitter' href=$hdm_social_tw>&#xe802;</a></li>" ;
+				echo "<li id='hdm_tw' class='the-icons span3' data-social='twitter'><a class='demo-icon icon-twitter' href=$hdm_social_tw><i>&#xe802;</i></a></li>" ;
 				break;
 			}else{
 		    	break;
@@ -206,7 +209,7 @@ function hdm_social( $input ) {
 		case 'instagram':
 			$hdm_social_in = hdm_get_option( 'hdm_social_in', 'com_tab' );
 			if 	( !empty( $hdm_social_in ) ) { 
-				echo "<li id='hdm_in' class='the-icons span3' ><a class='demo-icon icon-instagram' href= $hdm_social_in>&#xe807;</a></li>" ;
+				echo "<li id='hdm_in' class='the-icons span3' data-social='instagram'><a class='demo-icon icon-instagram' href= $hdm_social_in><i>&#xe807;</i></a></li>" ;
 				break;
 			}else{
 		    	break;
@@ -214,7 +217,7 @@ function hdm_social( $input ) {
 		case 'youtube':
 			$hdm_social_yo = hdm_get_option( 'hdm_social_yo', 'com_tab' );
 			if ( !empty( $hdm_social_yo ) ) { 
-				echo "<li id='hdm_yo' class='the-icons span3' ><a class='demo-icon icon-youtube' href= $hdm_social_yo >&#xe808;</a></li>" ;
+				echo "<li id='hdm_yo' class='the-icons span3' data-social='youtube'><a class='demo-icon icon-youtube' href= $hdm_social_yo ><i>&#xe808;</i></a></li>" ;
 				break;
 		    }else{
 		    	break;
@@ -222,7 +225,7 @@ function hdm_social( $input ) {
 		case 'googleplus':
 			$hdm_social_g  = hdm_get_option( 'hdm_social_g' , 'com_tab' );
 			if ( !empty( $hdm_social_g ) ) { 
-				echo "<li id='hdm_g' class='the-icons span3' ><a class='demo-icon icon-gplus' href=$hdm_social_g >&#xe806;</a></li>" ;
+				echo "<li id='hdm_g' class='the-icons span3' data-social='google plus'><a class='demo-icon icon-gplus' href=$hdm_social_g ><i>&#xe806;</i></a></li>" ;
 				break;	
 		    }else{
 		    	break;
@@ -230,7 +233,7 @@ function hdm_social( $input ) {
 		case 'pintrest':
 			$hdm_social_pi = hdm_get_option( 'hdm_social_pi', 'com_tab' );
 			if ( !empty( $hdm_social_pi ) ) { 
-				echo "<li id='hdm_pi' class='the-icons span3'><a class='demo-icon icon-pinterest' href=$hdm_social_pi>&#xe801;</a></li>";
+				echo "<li id='hdm_pi' class='the-icons span3' data-social='pinterest'><a class='demo-icon icon-pinterest' href=$hdm_social_pi><i>&#xe801;</i></a></li>";
 				break;
 		    }else{
 		    	break;
@@ -238,7 +241,7 @@ function hdm_social( $input ) {
 		case 'linkedin':
 			$hdm_social_li = hdm_get_option( 'hdm_social_li', 'com_tab' );
 			if ( !empty( $hdm_social_li ) ) { 
-				echo "<li id='hdm_li' class='the-icons span3'><a class='demo-icon icon-linkedin' href= $hdm_social_li>&#xe800;</a></li>" ;
+				echo "<li id='hdm_li' class='the-icons span3' data-social='linkedin'><a class='demo-icon icon-linkedin' href= $hdm_social_li><i>&#xe800;</i></a></li>" ;
 				break;
 		    }else{
 		    	break;
@@ -246,7 +249,7 @@ function hdm_social( $input ) {
 		case 'dribble':
 			$hdm_social_dr = hdm_get_option( 'hdm_social_dr', 'com_tab' );
 			if ( !empty ( $hdm_social_dr ) ) { 
-				echo "<li id='hdm_dr' class='the-icons span3'><a class='demo-icon icon-dribbble' href= $hdm_social_dr >&#xe804;</a></li>" ;
+				echo "<li id='hdm_dr' class='the-icons span3' data-social='dribbble'><a class='demo-icon icon-dribbble' href= $hdm_social_dr ><i>&#xe804;</i></a></li>" ;
 				break;
 		    }else{
 		    	break;
@@ -254,7 +257,7 @@ function hdm_social( $input ) {
 		case 'github':
 			$hdm_social_gi = hdm_get_option( 'hdm_social_gi', 'com_tab' );
 			if ( !empty( $hdm_social_gi ) ) { 
-				echo "<li id='hdm_fa' class='the-icons span3' ><a class='demo-icon icon-github' href= $hdm_social_gi >&#xe805;</a></li>" ;
+				echo "<li id='hdm_fa' class='the-icons span3' data-social='icon-github'><a class='demo-icon icon-github' href= $hdm_social_gi ><i>&#xe805;</i></a></li>" ;
 				break;
 			}else{
 				break;
@@ -315,7 +318,7 @@ function chim_msg() {
 /**
  * [hdm_maintenace_help Help Tab]
  */
-add_filter('contextual_help', 'hdm_maintenace_help', 10, 2);
+add_filter( 'contextual_help', 'hdm_maintenace_help', 10, 2 );
 function hdm_maintenace_help( $contextual_help, $screen_id) {
      
     switch( $screen_id ) {
@@ -331,7 +334,7 @@ function hdm_maintenace_help( $contextual_help, $screen_id) {
             get_current_screen()->add_help_tab( array(
             'id'        => 'hdm_dev',
             'title'     => __( 'Developer' ),
-            'content'   => __( 'As intrested user you can check this out <a href="http://omidakhavan.ir" > Averta </a>', 'bsscommingsoon' )
+            'content'   => __( 'As intrested user you can check this out <a href="http://omidakhavan.ir" >  </a>', 'bsscommingsoon' )
             ) );
             break;
     }
