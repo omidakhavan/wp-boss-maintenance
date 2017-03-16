@@ -56,7 +56,8 @@ class hdm_Settings {
                     'name'              => 'hdm_div',
                     'label'             => __( '<span class="hdm_divi" > Activation </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
-                    'type'              => 'html'
+                    'type'              => 'html',
+                    'sanitize_callback' => 'esc_html'
                 ),
                 array(
                     'name'              => 'hdm_active',
@@ -76,6 +77,7 @@ class hdm_Settings {
                     'label'             => __( 'Redirect To :', 'bsscommingsoon' ),
                     'desc'              => __( 'Redirect to costum page (for example http://example.com) leave empty for disbale redirect.', 'bsscommingsoon' ),
                     'type'              => 'url',
+                    'sanitize_callback' => 'esc_url',
                     'default'           => ''
                 ),
                 array(
@@ -112,6 +114,7 @@ class hdm_Settings {
                     'name'              => 'hdm_div02',
                     'label'             => __( '<span class="hdm_divi" > Logo </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ),
                 array(
@@ -125,6 +128,7 @@ class hdm_Settings {
                     'name'              => 'hdm_div03',
                     'label'             => __( '<span class="hdm_divi" > Messages </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ),
                 array(
@@ -132,6 +136,7 @@ class hdm_Settings {
                     'label'             => __( 'Page Title', 'bsscommingsoon' ),
                     'desc'              => __( 'Title of page Notice : if empty will be show your defualt blog info.', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
@@ -139,6 +144,7 @@ class hdm_Settings {
                     'label'             => __( 'Message Title', 'bsscommingsoon' ),
                     'desc'              => __( 'Title of message that you want to display on your maintenace page.', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
@@ -165,6 +171,7 @@ class hdm_Settings {
                     'name'              => 'hdm_div04',
                     'label'             => __( '<span class="hdm_divi" > Background </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ),
                 array(
@@ -182,6 +189,7 @@ class hdm_Settings {
                     'label'             => __( 'Background Image', 'bsscommingsoon' ),
                     'desc'              => __( 'Choose background image for maintenace page', 'bsscommingsoon' ),
                     'type'              => 'file',
+                    'sanitize_callback' => 'esc_url',
                     'default'           => ''
                 ),
                 array(
@@ -202,6 +210,7 @@ class hdm_Settings {
                     'label'             => __( 'Message Title Color', 'bsscommingsoon' ),
                     'desc'              => __( 'Pick Message Color ', 'bsscommingsoon' ),
                     'type'              => 'color',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
@@ -209,6 +218,7 @@ class hdm_Settings {
                     'label'             => __( 'Background Video', 'bsscommingsoon' ),
                     'desc'              => __( 'Ogg', 'bsscommingsoon' ),
                     'type'              => 'file',
+                    'sanitize_callback' => 'esc_url',
                     'default'           => ''
                 ),
                 array(
@@ -216,6 +226,7 @@ class hdm_Settings {
                     'label'             => __( 'Background Video', 'bsscommingsoon' ),
                     'desc'              => __( 'WemM', 'bsscommingsoon' ),
                     'type'              => 'file',
+                    'sanitize_callback' => 'esc_url',
                     'default'           => ''
                 ),
                 array(
@@ -223,18 +234,21 @@ class hdm_Settings {
                     'label'             => __( 'Background Video', 'bsscommingsoon' ),
                     'desc'              => __( 'Mp4', 'bsscommingsoon' ),
                     'type'              => 'file',
+                    'sanitize_callback' => 'esc_url',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_div05',
                     'label'             => __( '<span class="hdm_divi" > Custom Style </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ),               
                 array(
                     'name'              => 'hdm_style',
                     'label'             => __( 'Costum Style', 'bsscommingsoon' ),
                     'desc'              => __( 'Edit template style', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_textarea',
                     'type'              => 'textarea'
                 ),                                                   
             ),    
@@ -243,6 +257,7 @@ class hdm_Settings {
                     'name'              => 'hdm_div06',
                     'label'             => __( '<span class="hdm_divi" > Contact Form </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ),    
                 array(
@@ -258,12 +273,14 @@ class hdm_Settings {
                     'label'             => __( 'Admin E-mail', 'bsscommingsoon' ),
                     'desc'              => __( 'Users message will be sent to this address.', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => $admin_email
                 ),
                 array(
                     'name'              => 'hdm_div07',
                     'label'             => __( '<span class="hdm_divi" > NewsLetter </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ),  
                 array(
@@ -289,6 +306,7 @@ class hdm_Settings {
                     'label'             => __( 'MailChimp Api', 'bsscommingsoon' ),
                     'desc'              => __( 'Insert your mailchimp api key here.', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
@@ -296,6 +314,7 @@ class hdm_Settings {
                     'label'             => __( 'MailChimp List Id', 'bsscommingsoon' ),
                     'desc'              => __( 'Insert your mailchimp id here ex(http://kb.mailchimp.com/lists/managing-subscribers/find-your-list-id).', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
@@ -303,6 +322,7 @@ class hdm_Settings {
                     'label'             => __( 'FeedBurner', 'bsscommingsoon' ),
                     'desc'              => __( ' http://feeds2.feedburner.com/( only enter this part ).', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
@@ -310,6 +330,7 @@ class hdm_Settings {
                     'label'             => __( 'Subscriber Button', 'bsscommingsoon' ),
                     'desc'              => __( 'Subscriber Button Text.', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => 'Notify Me!'
                 ),
                 array(
@@ -317,12 +338,14 @@ class hdm_Settings {
                     'label'             => __( 'Subscriber Text', 'bsscommingsoon' ),
                     'desc'              => __( 'Edit subscribtion placeholder.', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => 'Subscribe For Feed...'
                 ),
                 array(
                     'name'              => 'hdm_div08',
                     'label'             => __( '<span class="hdm_divi" > Social </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ),  
                 array(
@@ -345,66 +368,77 @@ class hdm_Settings {
                     'name'              => 'hdm_social_fa',
                     'label'             => __( 'Facebook', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_tw',
                     'label'             => __( 'Twitter', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_in',
                     'label'             => __( 'Instagram', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_yo',
                     'label'             => __( 'You Tube', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_g',
                     'label'             => __( 'Google +', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_pi',
                     'label'             => __( 'Pinterest', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_li',
                     'label'             => __( 'Linked In', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_dr',
                     'label'             => __( 'Dribbble', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_social_gi',
                     'label'             => __( 'Github', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
                 array(
                     'name'              => 'hdm_div09',
                     'label'             => __( '<span class="hdm_divi" > Footer </span>', 'bsscommingsoon' ),
                     'desc'              => __( '<hr>', 'bsscommingsoon' ),
+                    'sanitize_callback' => 'esc_html',
                     'type'              => 'html'
                 ), 
                 array(
                     'name'              => 'hdm_footer',
                     'label'             => __( 'Footer Copyright', 'bsscommingsoon' ),
                     'type'              => 'text',
+                    'sanitize_callback' => 'sanitize_text_field',
                     'default'           => ''
                 ),
             )

@@ -104,39 +104,55 @@ function hdm_page_title () {
  * @return [type] [Contact form]
  */
 function hdm_cntct_frm() {
-	if ( isset( $_POST[ 'name' ] ) || isset( $_POST[ 'mail' ] ) || isset( $POST[ 'msg' ] ) ) {
+
+	if ( !isset( $_POST[ 'name' ] ) && !isset( $_POST[ 'mail' ] ) ) {
+		return;
+	}
 			
-		$hdm_error = array() ;
-		$name = trim( $_POST [ 'name' ] );
-		// validate name field
-		if ( !preg_match('/^[a-zA-Z ]*$/', $name) ) {
-			$name = "";
-			$hdm_error['name'] = _e( 'Please enter valid name', 'bsscommingsoon' );	
-			return $hdm_error ;						
-		}
-		$mail = trim( $_POST [ 'mail' ] );
-		//validate mail field
-		if ( !filter_var( $mail, FILTER_VALIDATE_EMAIL ) ) {
-			$mail = "" ;
-			$hdm_error ['mail'] = _e( 'Please enter valid email address', 'bsscommingsoon' );
-			return $hdm_error ;
-		}
-		$GLOBALS['$name'] ;
-		$GLOBALS['$mail'] ;
-		$msg  = trim( $_POST [ 'msg' ] );
-		//success
-		if ( empty( $hdm_error ) ) { 
-			$form_content = __( "User Mail : $mail \n User Message: $msg", 'bsscommingsoon' );
-			$hdm_admin_mail = hdm_get_option ( 'hdm_contact_email', 'com_tab' );
-			$subject = __( 'Maintenace Message', 'bsscommingsoon' );
-			wp_mail( $hdm_admin_mail, $subject, $form_content ) ;
-			echo '<span id="hdm_suc">' ;
-			 _e( 'Your message was successfuly sent!', 'bsscommingsoon' );
-			 echo  '</span> ' ;
-	    }else{
-	    	return $hdm_error ;
-	    }
-	}		
+	$hdm_error = array() ;
+	$name = sanitize_text_field( $_POST [ 'name' ] );
+
+	// validate name field
+	if ( !preg_match('/^[a-zA-Z ]*$/', $name) ) {
+		$name = "";
+		$hdm_error['name'] = _e( 'Please enter valid name.', 'bsscommingsoon' );	
+		return $hdm_error ;						
+	}
+
+	$mail = sanitize_email( $_POST [ 'mail' ] );
+
+	//validate mail field
+	if ( $mail ) {
+		$mail = "" ;
+		$hdm_error ['mail'] = _e( 'Please enter valid email address.', 'bsscommingsoon' );
+		return $hdm_error ;
+	}
+
+	$GLOBALS['$name'] ;
+	$GLOBALS['$mail'] ;
+
+	$msg  = sanitize_text_field( $_POST [ 'msg' ] );
+
+	//success
+	if ( empty( $hdm_error ) ) { 
+
+		$form_content = __( "User Mail : $mail \n User Message: $msg", 'bsscommingsoon' );
+
+		$hdm_admin_mail = hdm_get_option ( 'hdm_contact_email', 'com_tab' );
+
+		$subject = __( 'Maintenace Message', 'bsscommingsoon' );
+
+		wp_mail( $hdm_admin_mail, $subject, $form_content ) ;
+
+		echo '<span id="hdm_suc">  _e( 'Your message was successfuly sent!', 'bsscommingsoon' )
+
+		</span> ' ;
+
+	} else {
+
+		return $hdm_error ;
+
+	}	
 }
 
 /**
