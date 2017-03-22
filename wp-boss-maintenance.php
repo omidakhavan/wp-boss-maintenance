@@ -2,12 +2,12 @@
 
 /**
  * @link              http://omidakhavan.ir
- * @since             1.0.0
+ * @since             1.0.1
  * @package           boss-maintenance
  *
- * Plugin Name:       Boss Maintenance 
+ * Plugin Name:       Wp Boss Maintenance 
  * Description:       Create Comming Soon Page In WordPress Like A BOSS.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Omid Akhavan
  * Author URI:        http://omidakhavan.ir
  * Text Domain:       bsscommingsoon
@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Define Some Var
  */
-define( 'hdm_VER', '1.0.0' );
+define( 'hdm_VER', '1.0.1' );
 define( 'hdm_DIR', plugin_dir_path(  __FILE__  ));
 define( 'hdm_URL', plugins_url( '' , __FILE__ ));
 /**

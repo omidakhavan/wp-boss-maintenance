@@ -1,4 +1,4 @@
-=== wp-boss-maintenance ===
+=== wp boss maintenance ===
 Contributors: omidaking
 Donate link: 
 Tags: maintenance mode, coming soon, mail chimp integrated maintenance mode,feedburner integrated maintenance mode, video background maintenance mode
@@ -8,7 +8,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Create awesome , full feature maintenance mode for your wordpress like a BOSS.
+Create awesome, full feature maintenance mode for your wordpress like a BOSS.
 
 == Description ==
 
@@ -31,6 +31,8 @@ Create awesome , full feature maintenance mode for your wordpress like a BOSS.
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
 == Changelog ==
+Version 1.0.1
+-Change name
 
-Version 0.1
+Version 1.0.0
 -Initial release
