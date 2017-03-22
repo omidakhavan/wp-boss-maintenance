@@ -10,7 +10,7 @@
  * Version:           1.0.0
  * Author:            Omid Akhavan
  * Author URI:        http://omidakhavan.ir
- * Text Domain:       avla_maintenance
+ * Text Domain:       bsscommingsoon
  * Domain Path:       /languages
  */
 

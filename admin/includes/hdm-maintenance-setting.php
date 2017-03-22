@@ -157,7 +157,6 @@ class hdm_Settings {
                 array(
                     'name'              => 'hdm_describ',
                     'label'             => __( 'Maintenance Message', 'bsscommingsoon' ),
-                    'desc'              => __( '', 'bsscommingsoon' ),
                     'type'              => 'wysiwyg'
                 ),
                 array(

@@ -13,10 +13,6 @@ require_once hdm_DIR.'admin/includes/hdm-maintenance-chimp.php';
  
 /**
  * get option from setting page
- * @param  [type] $option  [description]
- * @param  [type] $section [description]
- * @param  string $default [description]
- * @return [type]          [description]
  */
 function hdm_get_option( $option, $section, $default = '' ) {
 	if ( empty( $option ) )
@@ -144,9 +140,7 @@ function hdm_cntct_frm() {
 
 		wp_mail( $hdm_admin_mail, $subject, $form_content ) ;
 
-		echo '<span id="hdm_suc">  _e( 'Your message was successfuly sent!', 'bsscommingsoon' )
-
-		</span> ' ;
+		echo '<span id="hdm_suc">' . _e( 'Your message was successfuly sent!', 'bsscommingsoon' ) . ' </span> ' ;
 
 	} else {
 
@@ -156,36 +150,28 @@ function hdm_cntct_frm() {
 }
 
 /**
- * [hdm_feedburner description]
- * @param  [type] $input [description]
- * @return [type]        [description]
+ * [hdm_feedburner]
  */
 function hdm_feedburner( $input ) { 
-$hdm_feed_act = hdm_get_option( 'hdm_newsle_active', 'com_tab' );
-$hdm_select_feed = hdm_get_option ( 'hdm_news_select', 'com_tab' );
-$hdm_feedburn = hdm_get_option( 'hdm_sub_feed', 'com_tab' );
-$hdm_feed_btn = hdm_get_option( 'hdm_sub_feed_btn', 'com_tab' );
-$hdm_feed_txt = hdm_get_option( 'hdm_sub_feed_txt', 'com_tab' );
-$hdm_bg = hdm_get_option ( 'hdm_bg' , 'design_tab' );
 
-	switch ($input) {
+	switch ( $input ) {
 		case 'hdm_bg':
-		    echo $hdm_bg ;
+		    echo hdm_get_option ( 'hdm_bg' , 'design_tab' );
 			break;
 		case 'active':
-			return $hdm_feed_act ;
+			return hdm_get_option( 'hdm_newsle_active', 'com_tab' );
 			break;
 		case 'select':
-			return $hdm_select_feed;
+			return hdm_get_option ( 'hdm_news_select', 'com_tab' );
 			break;
 		case 'link':
-			return $hdm_feedburn;
+			return hdm_get_option( 'hdm_sub_feed', 'com_tab' );
 			break;
 		case 'btn':
-			return $hdm_feed_btn;
+			return hdm_get_option( 'hdm_sub_feed_btn', 'com_tab' );
 			break;
 		case 'txt':
-			return $hdm_feed_txt;
+			return hdm_get_option( 'hdm_sub_feed_txt', 'com_tab' );
 			break;		
 		
 		default:
@@ -305,7 +291,7 @@ use \DrewM\MailChimp\MailChimp;
  
 $av_chimp = new MailChimp ($hdm_chimp);
 //Hash the subscriber mail
-$hdm_chimp_subs = $av_chimp->subscriberHash( $_POST[ 'mail_chimp' ]);
+$hdm_chimp_subs = $av_chimp->subscriberHash( sanitize_text_field( $_POST[ 'mail_chimp' ] ) );
 // add subscriber to list 
 $result_add = $av_chimp->post("lists/$hdm_chimp_id/members", [
                 'email_address' => $hdm_chimp_subs,
@@ -320,7 +306,7 @@ global $last_error;
  * @return [string] [message]
  */
 function chim_msg() { 
-	if ( !empty( $_POST[ 'mail_chimp' ] ) ) {  
+	if ( !empty( sanitize_text_field( $_POST[ 'mail_chimp' ] ) ) ) {  
 		if ( is_null( $last_error ) ) {
 			echo '<div id="chimp_suc">' ;
 			_e( 'Successfuly Subscribed', 'bsscommingsoon' );

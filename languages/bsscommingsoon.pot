@@ -1,0 +1,464 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Boss Maintenance\n"
+"POT-Creation-Date: 2017-03-22 17:16+0430\n"
+"PO-Revision-Date: 2017-03-22 17:15+0430\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wp-boss-maintenance.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/includes/hdm-maintenance-functions.php:73
+msgid "Your site is under maintenance and only admin can view pages."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:114
+msgid "Please enter valid name."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:123
+msgid "Please enter valid email address."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:139
+msgid "Maintenace Message"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:143
+msgid "Your message was successfuly sent!"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:312
+msgid "Successfuly Subscribed"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:331
+msgid "First view"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:332
+msgid ""
+"<P><strong>Active Plugin<strong/><p>When you triggered Maintenance to active,"
+"There are three way in front of you First, you can check the active and your "
+"site will be directed to custom template Secondly, will happen when you have "
+"custom link and fill the special place that embedded Thirdly, when you want "
+"to take special page to coming soon just go to your specific page and on the "
+"right hand combo box select averta maintenace template."
+"<P><strong>Counter<strong/><p>When you active plugin you can choose template "
+"with counter or without any counter demonstration the time calculation its "
+"matching with you local time but date will be calculate from js date "
+"function and has not any relation with you local date.<P><strong>Template "
+"Background<strong/><p>You whatever you want can change your style the one of "
+"the customazation section is change your template background color or set "
+"image for your background please keep in your mind that background image "
+"priority higher than background color."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:338
+msgid "Developer"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-functions.php:339
+msgid ""
+"As intrested user you can check this out <a href=\"http://omidakhavan.ir\" "
+">  </a>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:33
+msgid "General Settings"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:37
+msgid "Design Settings"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:41
+msgid "Contact Settings"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:57
+msgid "<span class=\"hdm_divi\" > Activation </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:58
+#: admin/includes/hdm-maintenance-setting.php:86
+#: admin/includes/hdm-maintenance-setting.php:116
+#: admin/includes/hdm-maintenance-setting.php:130
+#: admin/includes/hdm-maintenance-setting.php:172
+#: admin/includes/hdm-maintenance-setting.php:242
+#: admin/includes/hdm-maintenance-setting.php:258
+#: admin/includes/hdm-maintenance-setting.php:281
+#: admin/includes/hdm-maintenance-setting.php:346
+#: admin/includes/hdm-maintenance-setting.php:432
+msgid "<hr>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:64
+msgid "Active Maintenace Mode"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:66
+msgid "Checked for activation."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:71
+msgid "Dashboard Notifaction"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:72
+msgid "Reminder notifaction message appear on dashboard"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:77
+msgid "Redirect To :"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:78
+msgid ""
+"Redirect to costum page (for example http://example.com) leave empty for "
+"disbale redirect."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:85
+msgid "<span class=\"hdm_divi\" > Counter </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:91
+msgid "CountDown Activation"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:100
+msgid "Date"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:101
+msgid "Automatically disable maintenace mode at this date(mm/dd/yyyy 00:00:00)"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:107
+msgid "Counter Color"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:115
+msgid "<span class=\"hdm_divi\" > Logo </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:122
+msgid "Logo"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:123
+msgid "Choose logo for your maintenace page"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:129
+msgid "<span class=\"hdm_divi\" > Messages </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:136
+msgid "Page Title"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:137
+msgid "Title of page Notice : if empty will be show your defualt blog info."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:144
+msgid "Message Title"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:145
+msgid "Title of message that you want to display on your maintenace page."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:152
+#: admin/includes/hdm-maintenance-setting.php:164
+#: admin/includes/hdm-maintenance-setting.php:209
+msgid "Message Title Color"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:153
+#: admin/includes/hdm-maintenance-setting.php:165
+#: admin/includes/hdm-maintenance-setting.php:210
+msgid "Pick Message Color "
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:159
+msgid "Maintenance Message"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:171
+msgid "<span class=\"hdm_divi\" > Background </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:178
+msgid "Choose Background Type"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:188
+msgid "Background Image"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:189
+msgid "Choose background image for maintenace page"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:196
+msgid "Background Image Style"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:217
+#: admin/includes/hdm-maintenance-setting.php:225
+#: admin/includes/hdm-maintenance-setting.php:233
+msgid "Background Video"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:218
+msgid "Ogg"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:226
+msgid "WemM"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:234
+msgid "Mp4"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:241
+msgid "<span class=\"hdm_divi\" > Custom Style </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:248
+msgid "Costum Style"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:249
+msgid "Edit template style"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:257
+msgid "<span class=\"hdm_divi\" > Contact Form </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:264
+msgid "Contact Form Activation"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:272
+msgid "Admin E-mail"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:273
+msgid "Users message will be sent to this address."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:280
+msgid "<span class=\"hdm_divi\" > NewsLetter </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:287
+msgid "NewsLetter Activation"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:295
+msgid "News Letter"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:296
+msgid "Select Mailing System."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:305
+msgid "MailChimp Api"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:306
+msgid "Insert your mailchimp api key here."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:313
+msgid "MailChimp List Id"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:314
+msgid ""
+"Insert your mailchimp id here ex(http://kb.mailchimp.com/lists/managing-"
+"subscribers/find-your-list-id)."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:321
+msgid "FeedBurner"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:322
+msgid " http://feeds2.feedburner.com/( only enter this part )."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:329
+msgid "Subscriber Button"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:330
+msgid "Subscriber Button Text."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:337
+msgid "Subscriber Text"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:338
+msgid "Edit subscribtion placeholder."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:345
+msgid "<span class=\"hdm_divi\" > Social </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:352
+msgid "Social Networks"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:353
+msgid "Show your social networks link."
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:362
+msgid "Color Of Social Icons"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:368
+msgid "Facebook"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:375
+msgid "Twitter"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:382
+msgid "Instagram"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:389
+msgid "You Tube"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:396
+msgid "Google +"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:403
+msgid "Pinterest"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:410
+msgid "Linked In"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:417
+msgid "Dribbble"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:424
+msgid "Github"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:431
+msgid "<span class=\"hdm_divi\" > Footer </span>"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-setting.php:438
+msgid "Footer Copyright"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-settings-api.php:285
+msgid "Choose File"
+msgstr ""
+
+#: admin/includes/hdm-maintenance-temp.php:34
+msgid "Averta Coming Soon!"
+msgstr ""
+
+#: templates/hdm-template.php:142 templates/hdm-template.php:163
+msgid "Subscribtion"
+msgstr ""
+
+#: templates/hdm-template.php:146 templates/hdm-template.php:166
+msgid "Subscribe for our feeds"
+msgstr ""
+
+#: templates/hdm-template.php:184
+msgid "Stay in Touch"
+msgstr ""
+
+#: templates/hdm-template.php:190
+msgid "Name"
+msgstr ""
+
+#: templates/hdm-template.php:193
+msgid "E-Mail"
+msgstr ""
+
+#: templates/hdm-template.php:196
+msgid "Message"
+msgstr ""
+
+#: templates/hdm-template.php:294
+msgid "days"
+msgstr ""
+
+#: templates/hdm-template.php:295
+msgid "day"
+msgstr ""
+
+#: templates/hdm-template.php:296
+msgid "hours"
+msgstr ""
+
+#: templates/hdm-template.php:297
+msgid "hour"
+msgstr ""
+
+#: templates/hdm-template.php:298
+msgid "minutes"
+msgstr ""
+
+#: templates/hdm-template.php:299
+msgid "minute"
+msgstr ""
+
+#: templates/hdm-template.php:300
+msgid "seconds"
+msgstr ""
+
+#: templates/hdm-template.php:301
+msgid "second"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Boss Maintenance"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Create Comming Soon Page In WordPress Like A BOSS."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Omid Akhavan"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://omidakhavan.ir"
+msgstr ""
